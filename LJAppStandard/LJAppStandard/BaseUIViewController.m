@@ -18,10 +18,15 @@
     [super viewDidLoad];
     
     [self setupTitleData];
-    
     [self setupTitleView];
     [self setupTitleTextAndBarButtonItem];
-    
+    [self setupHideKeyboard];
+    [self addNotiToObserveUserLogInfomation];
+}
+
+/** 隐藏键盘*/
+- (void)hideKeyboard{
+    [self.view endEditing:YES];
 }
 
 /**
@@ -32,7 +37,7 @@
 }
 
 /**
- *  设置titleView的样式
+ *  设置titleView的样式（这里的titleView默认为一个Label）
  */
 - (void)setupTitleView{
     if (![self.navTitleText isEmpty] && [self.navigationController.viewControllers count] > 1) {
@@ -59,10 +64,28 @@
 }
 
 /**
- *  设置标题的文字和标题的按钮
+ *  设置标题的文字
  */
 - (void)setupTitleTextAndBarButtonItem{
     self.title = self.navTitleText;
+    
+}
+
+/**
+ *  设置隐藏键盘
+ */
+- (void)setupHideKeyboard{
+    if (self.isSupportSingleTapHideKeyboard){
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+        tap.cancelsTouchesInView = NO;
+        [self.view addGestureRecognizer:tap];
+    }
+}
+
+/**
+ *  添加通知来监听用户登录状态的改变(子类重写)
+ */
+- (void)addNotiToObserveUserLogInfomation{
     
 }
 

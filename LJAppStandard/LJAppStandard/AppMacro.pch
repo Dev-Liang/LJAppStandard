@@ -27,4 +27,9 @@
 #define themeFont10  [UIFont systemFontOfSize:10.0f]
 #define themeFont9   [UIFont systemFontOfSize:9.0f]
 
+#define knavBJColor  @"#2cc490"
+#define kviewBJColor @"#f0eff4"
+#define KcolorWhite  @"#ffffff"
+
+
 #endif
