@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180CEC391CBCDDEF00329B95 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180CEC381CBCDDEF00329B95 /* MessagesViewController.m */; };
 		18575FA11CBA194200B9AEB2 /* LJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18575FA01CBA194200B9AEB2 /* LJNavigationController.m */; };
 		18575FA41CBA19E300B9AEB2 /* BaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18575FA31CBA19E300B9AEB2 /* BaseUIViewController.m */; };
 		18575FA71CBA19F900B9AEB2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18575FA61CBA19F900B9AEB2 /* FirstViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180CEC371CBCDDEF00329B95 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
+		180CEC381CBCDDEF00329B95 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		18575F9F1CBA194200B9AEB2 /* LJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJNavigationController.h; sourceTree = "<group>"; };
 		18575FA01CBA194200B9AEB2 /* LJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJNavigationController.m; sourceTree = "<group>"; };
 		18575FA21CBA19E300B9AEB2 /* BaseUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUIViewController.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				18575FAF1CBA1A2400B9AEB2 /* FourthViewController.m */,
 				18575FB11CBA1A3C00B9AEB2 /* CenterViewController.h */,
 				18575FB21CBA1A3C00B9AEB2 /* CenterViewController.m */,
+				180CEC371CBCDDEF00329B95 /* MessagesViewController.h */,
+				180CEC381CBCDDEF00329B95 /* MessagesViewController.m */,
 				18575FB71CBA240800B9AEB2 /* UIView+Frame.h */,
 				18575FB81CBA240800B9AEB2 /* UIView+Frame.m */,
 				18575FC01CBA343800B9AEB2 /* NSString+Common.h */,
@@ -217,6 +222,7 @@
 				18575FAA1CBA1A0700B9AEB2 /* SecondViewController.m in Sources */,
 				18D363E11CBA143F00A784FD /* MainViewController.m in Sources */,
 				18575FC51CBA374100B9AEB2 /* UIColor+Common.m in Sources */,
+				180CEC391CBCDDEF00329B95 /* MessagesViewController.m in Sources */,
 				18575FB01CBA1A2400B9AEB2 /* FourthViewController.m in Sources */,
 				18575FAD1CBA1A1700B9AEB2 /* ThridViewController.m in Sources */,
 				18D363CA1CBA138200A784FD /* main.m in Sources */,

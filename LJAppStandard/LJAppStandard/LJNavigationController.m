@@ -7,7 +7,7 @@
 //
 
 #import "LJNavigationController.h"
-
+#import "MessagesViewController.h"
 @interface LJNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
@@ -59,26 +59,18 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.childViewControllers.count >= 1) {
-        // 左上角的返回
-        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setTitle:@"返回" forState:UIControlStateNormal];
-        [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [backButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        [backButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-        [backButton setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
-        [backButton sizeToFit];
-        [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        if ([viewController isKindOfClass:[MessagesViewController class]]) {
+            [self popToRootViewControllerAnimated:NO];
+            self.tabBarController.selectedIndex = 2;
+            return;
+        }
         viewController.hidesBottomBarWhenPushed = YES; // 隐藏底部的工具条
     }
     
+    // super的push方法一定要写到最后面
+    // 一旦调用super的pushViewController方法,就会创建子控制器viewController的view
+    // 也就会调用viewController的viewDidLoad方法
     [super pushViewController:viewController animated:animated];
-}
-
-- (void)back
-{
-    [self popViewControllerAnimated:YES];
 }
 
 #pragma mark - <UIGestureRecognizerDelegate>

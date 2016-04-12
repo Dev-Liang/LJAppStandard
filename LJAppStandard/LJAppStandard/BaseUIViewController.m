@@ -38,36 +38,37 @@
 
 /**
  *  设置titleView的样式（这里的titleView默认为一个Label）
+ *  self.navigationItem.title = @""; 也可以通过这种来设置标题，只是无法自定义样式
  */
 - (void)setupTitleView{
     if (![self.navTitleText isEmpty] && [self.navigationController.viewControllers count] > 1) {
-        UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 44)];
-        self.navTitleLabel = lb;
-        self.navTitleLabel.text = self.navTitleText;
-        self.navTitleLabel.backgroundColor = [UIColor clearColor];
-        self.navTitleLabel.font = themeFont17;
-        self.navTitleLabel.textAlignment = NSTextAlignmentCenter;
         // push出来的为灰色字体
-        self.navTitleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
-        self.navigationItem.titleView = self.navTitleLabel;
+        [self setupNavTitleWithColorHex:@"#333333"];
     }else if (![self.navTitleText isEmpty] && [self.navigationController.viewControllers count] == 1){
-        UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 44)];
-        self.navTitleLabel = lb;
-        self.navTitleLabel.text = self.navTitleText;
-        self.navTitleLabel.backgroundColor = [UIColor clearColor];
-        self.navTitleLabel.font = themeFont17;
-        self.navTitleLabel.textAlignment = NSTextAlignmentCenter;
         // 基础的为白色字体
-        self.navTitleLabel.textColor = [UIColor colorWithHexString:@"#ffffff"];
-        self.navigationItem.titleView = self.navTitleLabel;
+        [self setupNavTitleWithColorHex:@"#ffffff"];
     }
 }
 
+/** 设置Label样式*/
+- (void)setupNavTitleWithColorHex:(NSString *)hexColor{
+    UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 44)];
+    self.navTitleLabel = lb;
+    self.navTitleLabel.text = self.navTitleText;
+    self.navTitleLabel.backgroundColor = [UIColor clearColor];
+    self.navTitleLabel.font = themeFont17;
+    self.navTitleLabel.textAlignment = NSTextAlignmentCenter;
+    self.navTitleLabel.textColor = [UIColor colorWithHexString:hexColor];
+    self.navigationItem.titleView = self.navTitleLabel;
+}
+
 /**
- *  设置标题的文字
+ *  设置标题的文字和返回按钮
  */
 - (void)setupTitleTextAndBarButtonItem{
     self.title = self.navTitleText;
+    
+    [self setupCustomBackButtonItem];
     
 }
 
@@ -83,9 +84,94 @@
 }
 
 /**
- *  添加通知来监听用户登录状态的改变(子类重写)
+ *  添加通知来监听用户登录状态的改变
  */
 - (void)addNotiToObserveUserLogInfomation{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeLoginStatusNoti) name:LoginStatusChangeNoti object:nil];
+}
+
+/**
+ *  当用户登录注册改变时调用（子类重写此方法）
+ */
+- (void)changeLoginStatusNoti{
+    
+}
+
+/**
+ *  当销毁ViewController的时候，打印名称并移除监听（子类可以重写此方法）
+ */
+- (void)dealloc{
+    NSLog(@"%@dealloc",self.debugDescription);
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:LoginStatusChangeNoti object:nil];
+}
+
+/**
+ *  自定义返回按钮
+ */
+- (void)setupCustomBackButtonItem{
+    if ([self.navigationController.viewControllers count]>1)
+    {
+        // 左上角的返回
+        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+        [backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [backButton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+        [backButton setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+        [backButton setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+        [backButton sizeToFit];
+        [backButton addTarget:self action:@selector(backButtonItemClick) forControlEvents:UIControlEventTouchUpInside];
+        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    }else{
+        
+    }
+    
+}
+
+/**
+ *  返回按钮事件（重写改变返回的ViewController）
+ */
+- (void)backButtonItemClick{
+    if ([self.navigationController.viewControllers count] == 1) {
+        
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+/** 设置左侧BarButtonItem（子类重写）*/
+- (void)setNavLeftItemWith:(NSString *)str andImage:(UIImage *)image{
+    if ([self.navigationController.viewControllers count] == 1){
+        if ([str isEqualToString:@""]){
+            UIBarButtonItem *leftItem =[[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick:)];
+            self.navigationItem.leftBarButtonItem = leftItem;
+        }else{
+            UIBarButtonItem *leftItem =[[UIBarButtonItem alloc] initWithTitle:str style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick:)];
+            self.navigationItem.leftBarButtonItem = leftItem;
+        }
+    }
+}
+
+/** 设置右侧BarButtonItem（子类重写）*/
+- (void)setNavRightItemWith:(NSString *)str andImage:(UIImage *)image{
+    if ([str isEqualToString:@""]){
+        UIBarButtonItem *rightItem =[[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick:)];
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }else{
+        UIBarButtonItem *rightItem =[[UIBarButtonItem alloc] initWithTitle:str style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick:)];
+        
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }
+}
+
+/** 右侧点击事件（子类重写）*/
+- (void)rightItemClick:(id)sender{
+    
+}
+
+/** 左侧点击事件（子类重写）*/
+- (void)leftItemClick:(id)sender{
     
 }
 

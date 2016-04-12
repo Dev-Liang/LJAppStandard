@@ -13,6 +13,7 @@
 #import "ThridViewController.h"
 #import "FourthViewController.h"
 #import "CenterViewController.h"
+#import "MessagesViewController.h"
 #import "LJTabBar.h"
 @interface LJTabBarController ()
 
@@ -59,7 +60,7 @@
 - (void)setupChildVCs{
     [self setupChildVc:[[FirstViewController alloc] init] title:@"第一个" image:nil selectedImage:nil];
     [self setupChildVc:[[SecondViewController alloc] init] title:@"第二个" image:nil selectedImage:nil];
-    [self setupChildVc:[[ThridViewController alloc] init] title:@"第三个" image:nil selectedImage:nil];
+    [self setupChildVc:[[MessagesViewController alloc] init] title:@"消息" image:nil selectedImage:nil];
     [self setupChildVc:[[FourthViewController alloc] init] title:@"第四个" image:nil selectedImage:nil];
 }
 

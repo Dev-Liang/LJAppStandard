@@ -18,4 +18,17 @@
 - (void)setupTitleData;
 /** 添加通知来监听用户登录状态的改变(子类重写)*/
 - (void)addNotiToObserveUserLogInfomation;
+/** 返回按钮事件（子类重写)*/
+- (void)backButtonItemClick;
+
+
+/** 设置右侧BarButtonItem（子类重写）*/
+- (void)setNavRightItemWith:(NSString *)str andImage:(UIImage *)image;
+/** 设置左侧BarButtonItem（子类重写）*/
+- (void)setNavLeftItemWith:(NSString *)str andImage:(UIImage *)image;
+/** 左侧点击事件（子类重写）*/
+- (void)leftItemClick:(id)sender;
+/** 右侧点击事件（子类重写）*/
+- (void)rightItemClick:(id)sender;
+
 @end
