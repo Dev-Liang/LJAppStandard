@@ -8,12 +8,14 @@
 
 #import "BaseUIViewController.h"
 
-@interface BaseUIViewController ()
+@interface BaseUIViewController (){
+    UIScrollView *_dataScrollView;//数据源Scrollview
+}
 
 @end
 
 @implementation BaseUIViewController
-
+#pragma mark - **************** UI方面的设定
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,13 +29,6 @@
 /** 隐藏键盘*/
 - (void)hideKeyboard{
     [self.view endEditing:YES];
-}
-
-/**
- *  设置title的数据（子类重写）
- */
-- (void)setupTitleData{
-    
 }
 
 /**
@@ -91,13 +86,6 @@
 }
 
 /**
- *  当用户登录注册改变时调用（子类重写此方法）
- */
-- (void)changeLoginStatusNoti{
-    
-}
-
-/**
  *  当销毁ViewController的时候，打印名称并移除监听（子类可以重写此方法）
  */
 - (void)dealloc{
@@ -126,6 +114,21 @@
     }else{
         
     }
+    
+}
+
+/**
+ *  设置title的数据（子类重写）
+ */
+- (void)setupTitleData{
+    
+}
+
+
+/**
+ *  当用户登录注册改变时调用（子类重写此方法）
+ */
+- (void)changeLoginStatusNoti{
     
 }
 
@@ -174,5 +177,8 @@
 - (void)leftItemClick:(id)sender{
     
 }
+
+#pragma mark - **************** 加载动画的设定
+
 
 @end
