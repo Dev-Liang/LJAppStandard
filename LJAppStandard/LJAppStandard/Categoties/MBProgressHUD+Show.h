@@ -6,7 +6,7 @@
 //  Copyright © 2016年 www.shuoit.net. All rights reserved.
 //
 
-#import "MBProgressHUD/MBProgressHUD.h"
+#import "MBProgressHUD.h"
 
 @interface MBProgressHUD (Show)
 
