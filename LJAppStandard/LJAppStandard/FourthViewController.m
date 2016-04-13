@@ -17,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITableView *tv = [[UITableView alloc] initWithFrame:DeviceRect];
-    tv.backgroundColor = [UIColor whiteColor];
-    tv.dataSource = self;
-    tv.delegate = self;
+    UITableView *tv = [UICreator createTableWithStyle:UITableViewStylePlain seporatorLineColor:[UIColor grayColor] headerView:nil footerView:nil zeroMargin:YES delegate:self];
     [self addRefreshHeaderAndFooter:tv];
     [self.view addSubview:tv];
 }

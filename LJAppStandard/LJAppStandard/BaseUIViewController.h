@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *navTitleText;/** 导航条的文字*/
 @property (nonatomic, assign) BOOL isSupportSingleTapHideKeyboard;/** 点击屏幕隐藏键盘*/
 /**
- *  设置title的数据（子类重写
+ *  设置title的数据（子类重写)
  */
 - (void)setupTitleData;
 /**
@@ -87,9 +87,6 @@
  *  结束刷新（当数据加载完毕后，务必调用该方法）
  */
 - (void)endRefreshing;
-
-
-
 
 
 

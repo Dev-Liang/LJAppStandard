@@ -182,7 +182,7 @@
 #pragma mark - **************** 上拉刷新与下拉刷新的设定
 /**
  *  添加头部刷新控件
- *
+ *  修改提示文字  MJRefreshConst.m
  *  @param scroll 需要添加刷新的UIScrollView对象
  */
 - (void)addRefreshHeader:(UIScrollView *)scroll{
@@ -202,7 +202,7 @@
 
 /**
  *  添加尾部刷新控件
- *
+ *  修改提示文字  MJRefreshConst.m
  *  @param scroll 需要添加刷新的UIScrollView对象
  */
 - (void)addRefreshFooter:(UIScrollView *)scroll{
