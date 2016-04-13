@@ -16,13 +16,18 @@
 @implementation SecondViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    UIButton *btn = [[UIButton alloc] init];
-    btn.frame = CGRectMake(100, 100, 100, 40);
-    btn.backgroundColor = [UIColor redColor];
-    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"2按钮" forState:UIControlStateNormal];
-    [self.view addSubview:btn];
+//    [super viewDidLoad];
+//    UIButton *btn = [[UIButton alloc] init];
+//    btn.frame = CGRectMake(100, 100, 100, 40);
+//    btn.backgroundColor = [UIColor redColor];
+//    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [btn setTitle:@"2按钮" forState:UIControlStateNormal];
+//    [self.view addSubview:btn];
+    
+    self.view.backgroundColor = [UIColor whiteColor];;
+    [self startLoading];
+    sleep(10);
+    [self endLoading];
     
 }
 

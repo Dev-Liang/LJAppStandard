@@ -9,6 +9,7 @@
 #import "BaseUIViewController.h"
 @interface BaseUIViewController (){
     UIScrollView *_dataScrollView;//数据源Scrollview
+    UIActivityIndicatorView *_activy;//转场菊花图标
 }
 
 @end
@@ -178,6 +179,22 @@
 }
 
 #pragma mark - **************** 加载动画的设定
+/** 转场加载数据，开始动画 */
+- (void)startLoading{
+    self.view.userInteractionEnabled = NO;
+    UIActivityIndicatorView *activy = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activy = activy;
+    activy.center = self.view.center;
+    [self.view addSubview:activy];
+    [activy startAnimating];
+}
+
+/** 转场结束动画 */
+- (void)endLoading{
+    [_activy removeFromSuperview];
+    [_activy stopAnimating];
+    self.view.userInteractionEnabled = YES;
+}
 
 #pragma mark - **************** 上拉刷新与下拉刷新的设定
 /**
@@ -249,11 +266,5 @@
         [_dataScrollView.mj_footer endRefreshing];
     }
 }
-
-
-
-
-
-
 
 @end

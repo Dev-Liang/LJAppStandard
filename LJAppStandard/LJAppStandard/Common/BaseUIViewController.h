@@ -52,6 +52,15 @@
  *
  */
 - (void)rightItemClick:(id)sender;
+#pragma mark - **************** 转场动画的设定
+/**
+ *  转场开始动画
+ */
+- (void)startLoading;
+/**
+ *  转场结束动画
+ */
+- (void)endLoading;
 #pragma mark - **************** 上拉刷新与下拉刷新的设定
 /**
  *  添加头部刷新控件

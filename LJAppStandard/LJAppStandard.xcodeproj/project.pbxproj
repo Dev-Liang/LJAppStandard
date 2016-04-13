@@ -355,18 +355,18 @@
 		184535FC1CBE265C0002F8BA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1845360B1CBE265C0002F8BA /* UICreator.h */,
+				1845360C1CBE265C0002F8BA /* UICreator.m */,
+				184536091CBE265C0002F8BA /* PositionTools.h */,
+				1845360A1CBE265C0002F8BA /* PositionTools.m */,
+				184536071CBE265C0002F8BA /* FSStringTools.h */,
+				184536081CBE265C0002F8BA /* FSStringTools.m */,
 				184535FD1CBE265C0002F8BA /* FSCacheTools.h */,
 				184535FE1CBE265C0002F8BA /* FSCacheTools.m */,
 				184535FF1CBE265C0002F8BA /* FSDeviceTools.h */,
 				184536001CBE265C0002F8BA /* FSDeviceTools.m */,
 				184536031CBE265C0002F8BA /* FSPathTools.h */,
 				184536041CBE265C0002F8BA /* FSPathTools.m */,
-				184536071CBE265C0002F8BA /* FSStringTools.h */,
-				184536081CBE265C0002F8BA /* FSStringTools.m */,
-				184536091CBE265C0002F8BA /* PositionTools.h */,
-				1845360A1CBE265C0002F8BA /* PositionTools.m */,
-				1845360B1CBE265C0002F8BA /* UICreator.h */,
-				1845360C1CBE265C0002F8BA /* UICreator.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -513,20 +513,20 @@
 		1845369B1CBE3E160002F8BA /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				1845369C1CBE3E160002F8BA /* CenterViewController.h */,
-				1845369D1CBE3E160002F8BA /* CenterViewController.m */,
-				1845369E1CBE3E160002F8BA /* FirstViewController.h */,
-				1845369F1CBE3E160002F8BA /* FirstViewController.m */,
-				184536A01CBE3E160002F8BA /* FourthViewController.h */,
-				184536A11CBE3E160002F8BA /* FourthViewController.m */,
 				184536A21CBE3E160002F8BA /* MainViewController.h */,
 				184536A31CBE3E160002F8BA /* MainViewController.m */,
-				184536A41CBE3E160002F8BA /* MessagesViewController.h */,
-				184536A51CBE3E160002F8BA /* MessagesViewController.m */,
+				1845369E1CBE3E160002F8BA /* FirstViewController.h */,
+				1845369F1CBE3E160002F8BA /* FirstViewController.m */,
 				184536A61CBE3E160002F8BA /* SecondViewController.h */,
 				184536A71CBE3E160002F8BA /* SecondViewController.m */,
+				1845369C1CBE3E160002F8BA /* CenterViewController.h */,
+				1845369D1CBE3E160002F8BA /* CenterViewController.m */,
 				184536A81CBE3E160002F8BA /* ThridViewController.h */,
 				184536A91CBE3E160002F8BA /* ThridViewController.m */,
+				184536A01CBE3E160002F8BA /* FourthViewController.h */,
+				184536A11CBE3E160002F8BA /* FourthViewController.m */,
+				184536A41CBE3E160002F8BA /* MessagesViewController.h */,
+				184536A51CBE3E160002F8BA /* MessagesViewController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
