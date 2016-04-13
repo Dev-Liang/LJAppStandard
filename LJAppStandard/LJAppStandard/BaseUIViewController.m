@@ -7,7 +7,6 @@
 //
 
 #import "BaseUIViewController.h"
-
 @interface BaseUIViewController (){
     UIScrollView *_dataScrollView;//数据源Scrollview
 }
@@ -179,6 +178,82 @@
 }
 
 #pragma mark - **************** 加载动画的设定
+
+#pragma mark - **************** 上拉刷新与下拉刷新的设定
+/**
+ *  添加头部刷新控件
+ *
+ *  @param scroll 需要添加刷新的UIScrollView对象
+ */
+- (void)addRefreshHeader:(UIScrollView *)scroll{
+    _dataScrollView = scroll;
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    header.automaticallyChangeAlpha = YES;
+    
+    // 隐藏时间
+    header.lastUpdatedTimeLabel.hidden = YES;
+    
+    // 设置header
+    _dataScrollView.mj_header = header;
+}
+
+/**
+ *  添加尾部刷新控件
+ *
+ *  @param scroll 需要添加刷新的UIScrollView对象
+ */
+- (void)addRefreshFooter:(UIScrollView *)scroll{
+    _dataScrollView = scroll;
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    _dataScrollView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf loadMoreData];
+    }];
+}
+
+/**
+ *  添加头部和尾部刷新控件
+ *
+ *  @param scroll 需要添加刷新的UIScrollView对象
+ */
+- (void)addRefreshHeaderAndFooter:(UIScrollView *)scroll{
+    [self addRefreshFooter:scroll];
+    [self addRefreshHeader:scroll];
+}
+
+/** 加载新的数据*/
+- (void)loadNewData{
+    
+}
+
+/** 加载更多数据*/
+- (void)loadMoreData{
+    
+}
+
+/** 开始刷新（当需要进入界面自动刷新时候，添加该方法）*/
+- (void)beginRefreshing{
+    [_dataScrollView.mj_header beginRefreshing];
+}
+
+/** 结束刷新*/
+- (void)endRefreshing{
+    if(_dataScrollView.mj_header){
+        [_dataScrollView.mj_header endRefreshing];
+    }
+    if(_dataScrollView.mj_footer){
+        [_dataScrollView.mj_footer endRefreshing];
+    }
+}
+
+
+
+
+
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import "FourthViewController.h"
 
-@interface FourthViewController ()
+@interface FourthViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -16,22 +16,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UITableView *tv = [[UITableView alloc] initWithFrame:DeviceRect];
+    tv.backgroundColor = [UIColor whiteColor];
+    tv.dataSource = self;
+    tv.delegate = self;
+    [self addRefreshHeaderAndFooter:tv];
+    [self.view addSubview:tv];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - **************** UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
 }
-*/
+
+static NSString * const CellId = @"CellId";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    return cell;
+}
 
 @end
