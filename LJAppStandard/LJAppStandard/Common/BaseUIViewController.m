@@ -267,4 +267,8 @@
     }
 }
 
+// http://huaban.com/boards/24860605/
+#pragma mark - **************** 页面空数据的设定
+
+
 @end
