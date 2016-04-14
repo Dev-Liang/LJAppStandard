@@ -299,7 +299,7 @@
  *  @param title 提醒文字
  */
 - (void)addEmptyDataViewWithTitle:(NSString *)title{
-    EmptyDataView *empty = [EmptyDataView viewFromXib];
+    EmptyDataView *empty = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([EmptyDataView class]) owner:nil options:nil] lastObject];
     if (title) {
         empty.titleLB.text = title;
     }

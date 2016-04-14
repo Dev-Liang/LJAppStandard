@@ -43,7 +43,7 @@
 
 - (void)btnclick{
 //    [self startLoading];
-    [self addEmptyDataViewWithTitle:@"没有收藏的人，那什么找回忆"];
+    [self addEmptyDataViewWithTitle:@"没有收藏的人，拿什么找回忆"];
 }
 
 - (void)btn1click{

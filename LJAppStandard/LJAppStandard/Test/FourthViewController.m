@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.isSupportScrollingHideNavigationBar = YES;
     UITableView *tv = [UICreator createTableWithStyle:UITableViewStylePlain seporatorLineColor:[UIColor grayColor] headerView:nil footerView:nil zeroMargin:YES delegate:self];
     [self addRefreshHeaderAndFooter:tv];
     [self.view addSubview:tv];
