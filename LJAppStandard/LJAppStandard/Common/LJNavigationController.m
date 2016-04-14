@@ -49,19 +49,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 获取系统自带滑动手势的target对象
+    [self addGlobalSlideGesture];
+}
+
+/**
+ *  添加全局滑动手势
+ */
+- (void)addGlobalSlideGesture{
     id target = self.interactivePopGestureRecognizer.delegate;
     
     // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法(由于是私有方法，忽略警告)
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
     
-    // 设置手势代理，拦截手势触发
     pan.delegate = self;
     
-    // 给导航控制器的view添加全屏滑动手势
     [self.view addGestureRecognizer:pan];
     
-    // 禁止使用系统自带的滑动手势
     self.interactivePopGestureRecognizer.enabled = NO;
 }
 
@@ -80,9 +83,6 @@
         viewController.hidesBottomBarWhenPushed = YES; // 隐藏底部的工具条
     }
     
-    // super的push方法一定要写到最后面
-    // 一旦调用super的pushViewController方法,就会创建子控制器viewController的view
-    // 也就会调用viewController的viewDidLoad方法
     [super pushViewController:viewController animated:animated];
 }
 
@@ -93,7 +93,6 @@
  */
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    // 如果当前显示的是第一个子控制器,就应该禁止掉[返回手势]
     return self.childViewControllers.count > 1;
 }
 

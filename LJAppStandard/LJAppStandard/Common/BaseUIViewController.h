@@ -13,9 +13,14 @@
  */
 @interface BaseUIViewController : UIViewController
 #pragma mark - **************** UI方面的设定
-@property (nonatomic, weak) UILabel *navTitleLabel;/** 导航条的自定义titleLabel*/
-@property (nonatomic, copy) NSString *navTitleText;/** 导航条的文字*/
-@property (nonatomic, assign) BOOL isSupportSingleTapHideKeyboard;/** 点击屏幕隐藏键盘*/
+/** 导航条的自定义titleLabel*/
+@property (nonatomic, weak) UILabel *navTitleLabel;
+/** 导航条的文字*/
+@property (nonatomic, copy) NSString *navTitleText;
+/** 点击屏幕隐藏键盘*/
+@property (nonatomic, assign) BOOL isSupportSingleTapHideKeyboard;
+/** 滑动时隐藏NavigationBar*/
+@property (nonatomic, assign) BOOL isSupportScrollingHideNavigationBar;
 /**
  *  设置title的数据（子类重写)
  */

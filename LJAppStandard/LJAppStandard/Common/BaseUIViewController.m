@@ -8,7 +8,7 @@
 
 #import "BaseUIViewController.h"
 #import "EmptyDataView.h"
-@interface BaseUIViewController (){
+@interface BaseUIViewController ()<UIScrollViewDelegate>{
     UIScrollView *_dataScrollView;//数据源Scrollview
     UIActivityIndicatorView *_activy;//转场菊花图标
     EmptyDataView *_emptyView;
@@ -26,6 +26,24 @@
     [self setupTitleTextAndBarButtonItem];
     [self setupHideKeyboard];
     [self addNotiToObserveUserLogInfomation];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
+
+/** 当滑动的时候是否需要隐藏navigationBar*/
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    if (!self.isSupportScrollingHideNavigationBar) {
+        return;
+    }
+    if(velocity.y > 0){
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }else{
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
     
 }
 
