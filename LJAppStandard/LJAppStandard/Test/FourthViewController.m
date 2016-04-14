@@ -7,7 +7,8 @@
 //
 
 #import "FourthViewController.h"
-
+#import "SecondViewController.h"
+#import "TestViewController.h"
 @interface FourthViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -42,7 +43,8 @@ static NSString * const CellId = @"CellId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    [self.navigationController pushViewController:[TestViewController new] animated:YES];
 }
 
 @end

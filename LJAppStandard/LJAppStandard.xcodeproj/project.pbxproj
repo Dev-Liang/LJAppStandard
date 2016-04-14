@@ -61,6 +61,7 @@
 		180AEF3C1CBF3A9200FD4D3D /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF061CBF3A9200FD4D3D /* UIScrollView+MJExtension.m */; };
 		180AEF3D1CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF081CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m */; };
 		180AEF3E1CBF3A9200FD4D3D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */; };
+		180AEF411CBF6A9700FD4D3D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF401CBF6A9700FD4D3D /* TestViewController.m */; };
 		1845360D1CBE265C0002F8BA /* FSCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535FE1CBE265C0002F8BA /* FSCacheTools.m */; };
 		1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536001CBE265C0002F8BA /* FSDeviceTools.m */; };
 		184536101CBE265C0002F8BA /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536041CBE265C0002F8BA /* FSPathTools.m */; };
@@ -80,7 +81,6 @@
 		184536B41CBE3E160002F8BA /* CenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845369D1CBE3E160002F8BA /* CenterViewController.m */; };
 		184536B51CBE3E160002F8BA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845369F1CBE3E160002F8BA /* FirstViewController.m */; };
 		184536B61CBE3E160002F8BA /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A11CBE3E160002F8BA /* FourthViewController.m */; };
-		184536B71CBE3E160002F8BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A31CBE3E160002F8BA /* MainViewController.m */; };
 		184536B81CBE3E160002F8BA /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A51CBE3E160002F8BA /* MessagesViewController.m */; };
 		184536B91CBE3E160002F8BA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A71CBE3E160002F8BA /* SecondViewController.m */; };
 		184536BA1CBE3E160002F8BA /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A91CBE3E160002F8BA /* ThridViewController.m */; };
@@ -199,6 +199,8 @@
 		180AEF081CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		180AEF091CBF3A9200FD4D3D /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		180AEF3F1CBF6A9700FD4D3D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		180AEF401CBF6A9700FD4D3D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		184535FD1CBE265C0002F8BA /* FSCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCacheTools.h; sourceTree = "<group>"; };
 		184535FE1CBE265C0002F8BA /* FSCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCacheTools.m; sourceTree = "<group>"; };
 		184535FF1CBE265C0002F8BA /* FSDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDeviceTools.h; sourceTree = "<group>"; };
@@ -237,8 +239,6 @@
 		1845369F1CBE3E160002F8BA /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		184536A01CBE3E160002F8BA /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		184536A11CBE3E160002F8BA /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
-		184536A21CBE3E160002F8BA /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		184536A31CBE3E160002F8BA /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		184536A41CBE3E160002F8BA /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
 		184536A51CBE3E160002F8BA /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		184536A61CBE3E160002F8BA /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -532,20 +532,20 @@
 		1845369B1CBE3E160002F8BA /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				184536A21CBE3E160002F8BA /* MainViewController.h */,
-				184536A31CBE3E160002F8BA /* MainViewController.m */,
 				1845369E1CBE3E160002F8BA /* FirstViewController.h */,
 				1845369F1CBE3E160002F8BA /* FirstViewController.m */,
 				184536A61CBE3E160002F8BA /* SecondViewController.h */,
 				184536A71CBE3E160002F8BA /* SecondViewController.m */,
 				1845369C1CBE3E160002F8BA /* CenterViewController.h */,
 				1845369D1CBE3E160002F8BA /* CenterViewController.m */,
-				184536A81CBE3E160002F8BA /* ThridViewController.h */,
-				184536A91CBE3E160002F8BA /* ThridViewController.m */,
-				184536A01CBE3E160002F8BA /* FourthViewController.h */,
-				184536A11CBE3E160002F8BA /* FourthViewController.m */,
 				184536A41CBE3E160002F8BA /* MessagesViewController.h */,
 				184536A51CBE3E160002F8BA /* MessagesViewController.m */,
+				184536A01CBE3E160002F8BA /* FourthViewController.h */,
+				184536A11CBE3E160002F8BA /* FourthViewController.m */,
+				184536A81CBE3E160002F8BA /* ThridViewController.h */,
+				184536A91CBE3E160002F8BA /* ThridViewController.m */,
+				180AEF3F1CBF6A9700FD4D3D /* TestViewController.h */,
+				180AEF401CBF6A9700FD4D3D /* TestViewController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -691,6 +691,7 @@
 				180AEF1F1CBF3A9200FD4D3D /* MASCompositeConstraint.m in Sources */,
 				180AEF3B1CBF3A9200FD4D3D /* MJRefreshConst.m in Sources */,
 				180AEF2C1CBF3A9200FD4D3D /* MJRefreshAutoFooter.m in Sources */,
+				180AEF411CBF6A9700FD4D3D /* TestViewController.m in Sources */,
 				180AEF0C1CBF3A9200FD4D3D /* AFHTTPRequestOperationManager.m in Sources */,
 				1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */,
 				184536141CBE265C0002F8BA /* UICreator.m in Sources */,
@@ -708,7 +709,6 @@
 				180AEF131CBF3A9200FD4D3D /* AFURLSessionManager.m in Sources */,
 				180AEF2E1CBF3A9200FD4D3D /* MJRefreshComponent.m in Sources */,
 				180AEF391CBF3A9200FD4D3D /* MJRefreshStateHeader.m in Sources */,
-				184536B71CBE3E160002F8BA /* MainViewController.m in Sources */,
 				180AEF231CBF3A9200FD4D3D /* MASViewAttribute.m in Sources */,
 				180AEF181CBF3A9200FD4D3D /* UIAlertView+AFNetworking.m in Sources */,
 				180AEF201CBF3A9200FD4D3D /* MASConstraint.m in Sources */,

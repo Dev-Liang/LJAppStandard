@@ -26,6 +26,7 @@
     [self setupTitleTextAndBarButtonItem];
     [self setupHideKeyboard];
     [self addNotiToObserveUserLogInfomation];
+    
 }
 
 /** 隐藏键盘*/
@@ -99,7 +100,7 @@
  *  自定义返回按钮
  */
 - (void)setupCustomBackButtonItem{
-    if ([self.navigationController.viewControllers count]>1)
+    if (self.navigationController.childViewControllers.count > 1)
     {
         // 左上角的返回
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -177,6 +178,11 @@
 /** 左侧点击事件（子类重写）*/
 - (void)leftItemClick:(id)sender{
     
+}
+
+/** 返回主界面*/
+- (void)backToRootViewControllerWithAnimated:(BOOL)animated{
+    [self.navigationController popToRootViewControllerAnimated:animated];
 }
 
 #pragma mark - **************** 加载动画的设定

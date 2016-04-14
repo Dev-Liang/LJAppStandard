@@ -27,18 +27,18 @@
     [bar setTitleTextAttributes:barAttrs];
     
     /** 设置UIBarButtonItem */
-    UIBarButtonItem *item = [UIBarButtonItem appearance];
-    
-    // UIControlStateNormal
-    NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
-    normalAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
-    normalAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:17];
-    [item setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
-    
-    // UIControlStateDisabled
-    NSMutableDictionary *disabledAttrs = [NSMutableDictionary dictionary];
-    disabledAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
-    [item setTitleTextAttributes:disabledAttrs forState:UIControlStateDisabled];
+//    UIBarButtonItem *item = [UIBarButtonItem appearance];
+//    
+//    // UIControlStateNormal
+//    NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
+//    normalAttrs[NSForegroundColorAttributeName] = [UIColor blackColor];
+//    normalAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:17];
+//    [item setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
+//    
+//    // UIControlStateDisabled
+//    NSMutableDictionary *disabledAttrs = [NSMutableDictionary dictionary];
+//    disabledAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+//    [item setTitleTextAttributes:disabledAttrs forState:UIControlStateDisabled];
     
     /** 如果设置了背景色，translucent设置为NO，没有穿透效果*/
 //    [bar setTintColor:[UIColor colorWithHexString:KcolorWhite]];
@@ -48,9 +48,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /** 设置左滑代理*/
-    self.interactivePopGestureRecognizer.delegate = self;
-
+    
+    // 获取系统自带滑动手势的target对象
+    id target = self.interactivePopGestureRecognizer.delegate;
+    
+    // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法(由于是私有方法，忽略警告)
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
+    
+    // 设置手势代理，拦截手势触发
+    pan.delegate = self;
+    
+    // 给导航控制器的view添加全屏滑动手势
+    [self.view addGestureRecognizer:pan];
+    
+    // 禁止使用系统自带的滑动手势
+    self.interactivePopGestureRecognizer.enabled = NO;
 }
 
 /**
@@ -59,6 +71,7 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.childViewControllers.count >= 1) {
+        //当跳转的ViewController为MessagesViewController时，直接通过tabbar切换
         if ([viewController isKindOfClass:[MessagesViewController class]]) {
             [self popToRootViewControllerAnimated:NO];
             self.tabBarController.selectedIndex = 2;

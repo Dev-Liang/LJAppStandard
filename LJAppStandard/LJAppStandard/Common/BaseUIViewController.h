@@ -52,6 +52,12 @@
  *
  */
 - (void)rightItemClick:(id)sender;
+/**
+ *  返回主界面
+ *
+ *  @param animated 是否需要动画
+ */
+- (void)backToRootViewControllerWithAnimated:(BOOL)animated;
 #pragma mark - **************** 转场动画的设定
 /**
  *  转场开始动画
