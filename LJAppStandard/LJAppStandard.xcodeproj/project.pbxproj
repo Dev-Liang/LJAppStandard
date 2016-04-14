@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180AEE911CBF32BF00FD4D3D /* EmptyDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEE901CBF32BF00FD4D3D /* EmptyDataView.m */; };
+		180AEE931CBF32D300FD4D3D /* EmptyDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180AEE921CBF32D300FD4D3D /* EmptyDataView.xib */; };
 		184535E61CBDEACE0002F8BA /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535BC1CBDEACE0002F8BA /* MJRefreshAutoFooter.m */; };
 		184535E71CBDEACE0002F8BA /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535BE1CBDEACE0002F8BA /* MJRefreshBackFooter.m */; };
 		184535E81CBDEACE0002F8BA /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535C01CBDEACE0002F8BA /* MJRefreshComponent.m */; };
@@ -88,6 +90,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180AEE8F1CBF32BF00FD4D3D /* EmptyDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyDataView.h; sourceTree = "<group>"; };
+		180AEE901CBF32BF00FD4D3D /* EmptyDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyDataView.m; sourceTree = "<group>"; };
+		180AEE921CBF32D300FD4D3D /* EmptyDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyDataView.xib; sourceTree = "<group>"; };
 		184535BB1CBDEACE0002F8BA /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		184535BC1CBDEACE0002F8BA /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		184535BD1CBDEACE0002F8BA /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -506,6 +511,9 @@
 				184536981CBE3E160002F8BA /* LJTabBar.m */,
 				184536991CBE3E160002F8BA /* LJTabBarController.h */,
 				1845369A1CBE3E160002F8BA /* LJTabBarController.m */,
+				180AEE8F1CBF32BF00FD4D3D /* EmptyDataView.h */,
+				180AEE901CBF32BF00FD4D3D /* EmptyDataView.m */,
+				180AEE921CBF32D300FD4D3D /* EmptyDataView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -632,6 +640,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180AEE931CBF32D300FD4D3D /* EmptyDataView.xib in Resources */,
 				1845367F1CBE2FAA0002F8BA /* LICENSE in Resources */,
 				184536301CBE27C00002F8BA /* Info.plist in Resources */,
 				18D363D81CBA138200A784FD /* LaunchScreen.storyboard in Resources */,
@@ -659,6 +668,7 @@
 				184535EE1CBDEACE0002F8BA /* MJRefreshBackGifFooter.m in Sources */,
 				184536351CBE27C00002F8BA /* MASViewAttribute.m in Sources */,
 				184536771CBE29A10002F8BA /* UIProgressView+AFNetworking.m in Sources */,
+				180AEE911CBF32BF00FD4D3D /* EmptyDataView.m in Sources */,
 				184536681CBE29A10002F8BA /* AFHTTPRequestOperationManager.m in Sources */,
 				184536391CBE27C00002F8BA /* View+MASAdditions.m in Sources */,
 				184536341CBE27C00002F8BA /* MASLayoutConstraint.m in Sources */,

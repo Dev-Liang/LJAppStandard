@@ -7,9 +7,11 @@
 //
 
 #import "BaseUIViewController.h"
+#import "EmptyDataView.h"
 @interface BaseUIViewController (){
     UIScrollView *_dataScrollView;//数据源Scrollview
     UIActivityIndicatorView *_activy;//转场菊花图标
+    EmptyDataView *_emptyView;
 }
 
 @end
@@ -114,7 +116,6 @@
     }else{
         
     }
-    
 }
 
 /**
@@ -267,8 +268,29 @@
     }
 }
 
-// http://huaban.com/boards/24860605/
 #pragma mark - **************** 页面空数据的设定
+/**
+ *  添加空数据视图
+ *
+ *  @param title 提醒文字
+ */
+- (void)addEmptyDataViewWithTitle:(NSString *)title{
+    EmptyDataView *empty = [EmptyDataView viewFromXib];
+    if (title) {
+        empty.titleLB.text = title;
+    }
+    empty.frame = DeviceRect;
+    _emptyView = empty;
+    [self.view addSubview:empty];
+}
 
+/**
+ *  移除空数据视图
+ */
+- (void)removeEmptyDataView{
+    if (_emptyView) {
+        [_emptyView removeFromSuperview];
+    }
+}
 
 @end

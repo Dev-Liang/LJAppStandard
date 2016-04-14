@@ -42,7 +42,8 @@
 }
 
 - (void)btnclick{
-    [self startLoading];
+//    [self startLoading];
+    [self addEmptyDataViewWithTitle:@"没有收藏的人，那什么找回忆"];
 }
 
 - (void)btn1click{

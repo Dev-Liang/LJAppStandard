@@ -97,6 +97,14 @@
  */
 - (void)endRefreshing;
 #pragma mark - **************** 页面空数据的设定
-
-
+/**
+ *  添加空数据视图
+ *
+ *  @param title 提醒文字
+ */
+- (void)addEmptyDataViewWithTitle:(NSString *)title;
+/**
+ *  移除空数据视图
+ */
+- (void)removeEmptyDataView;
 @end
