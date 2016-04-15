@@ -84,6 +84,7 @@
 		184536B81CBE3E160002F8BA /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A51CBE3E160002F8BA /* MessagesViewController.m */; };
 		184536B91CBE3E160002F8BA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A71CBE3E160002F8BA /* SecondViewController.m */; };
 		184536BA1CBE3E160002F8BA /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A91CBE3E160002F8BA /* ThridViewController.m */; };
+		18A97F6C1CC0CDEC009B3687 /* TimeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A97F6B1CC0CDEC009B3687 /* TimeButton.m */; };
 		18D363CA1CBA138200A784FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D363C91CBA138200A784FD /* main.m */; };
 		18D363D51CBA138200A784FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D363D41CBA138200A784FD /* Assets.xcassets */; };
 		18D363D81CBA138200A784FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D363D61CBA138200A784FD /* LaunchScreen.storyboard */; };
@@ -246,6 +247,8 @@
 		184536A81CBE3E160002F8BA /* ThridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThridViewController.h; sourceTree = "<group>"; };
 		184536A91CBE3E160002F8BA /* ThridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThridViewController.m; sourceTree = "<group>"; };
 		18575FBA1CBA24A300B9AEB2 /* AppMacro.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.pch; sourceTree = "<group>"; };
+		18A97F6A1CC0CDEC009B3687 /* TimeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeButton.h; sourceTree = "<group>"; };
+		18A97F6B1CC0CDEC009B3687 /* TimeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeButton.m; sourceTree = "<group>"; };
 		18D363C51CBA138200A784FD /* LJAppStandard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJAppStandard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D363C91CBA138200A784FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18D363D41CBA138200A784FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -550,6 +553,15 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		18A97F691CC0CDC5009B3687 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				18A97F6A1CC0CDEC009B3687 /* TimeButton.h */,
+				18A97F6B1CC0CDEC009B3687 /* TimeButton.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		18D363BC1CBA138200A784FD = {
 			isa = PBXGroup;
 			children = (
@@ -573,6 +585,7 @@
 				1845369B1CBE3E160002F8BA /* Test */,
 				184536851CBE3E160002F8BA /* Categoties */,
 				184535FC1CBE265C0002F8BA /* Tools */,
+				18A97F691CC0CDC5009B3687 /* UI */,
 				180AEE941CBF3A9200FD4D3D /* Vendors */,
 				18575FBA1CBA24A300B9AEB2 /* AppMacro.pch */,
 				18D363D41CBA138200A784FD /* Assets.xcassets */,
@@ -693,6 +706,7 @@
 				180AEF2C1CBF3A9200FD4D3D /* MJRefreshAutoFooter.m in Sources */,
 				180AEF411CBF6A9700FD4D3D /* TestViewController.m in Sources */,
 				180AEF0C1CBF3A9200FD4D3D /* AFHTTPRequestOperationManager.m in Sources */,
+				18A97F6C1CC0CDEC009B3687 /* TimeButton.m in Sources */,
 				1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */,
 				184536141CBE265C0002F8BA /* UICreator.m in Sources */,
 				184536AD1CBE3E160002F8BA /* UIImage+FSUIImage.m in Sources */,
@@ -841,6 +855,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LJAppStandard/AppMacro.pch;
 				INFOPLIST_FILE = LJAppStandard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.j1.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -853,6 +868,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = LJAppStandard/AppMacro.pch;
 				INFOPLIST_FILE = LJAppStandard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.j1.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";

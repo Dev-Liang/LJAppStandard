@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-
+#import "TimeButton.h"
 @interface FirstViewController ()
 
 @end
@@ -25,7 +25,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];;
     
-    sleep(10);
+//    sleep(10);
 
     
     UIButton *btn = [UICreator createButtonWithTitle:@"start" titleColor:[UIColor redColor] font:[UIFont systemFontOfSize:15] target:self action:@selector(btnclick)];
@@ -39,6 +39,13 @@
     UIButton *btn2 = [UICreator createButtonWithTitle:@"hello" titleColor:[UIColor redColor] font:[UIFont systemFontOfSize:15] target:self action:@selector(btn2click)];
     btn2.frame = CGRectMake(100, 180, 100, 20);
     [self.view addSubview:btn2];
+    
+    TimeButton *timeBtn = [[TimeButton alloc] init];
+    [timeBtn timerWithSecond:20];
+    timeBtn.backgroundColor = [UIColor greenColor];
+    timeBtn.frame = CGRectMake(100, 250, 100, 40);
+    timeBtn.layer.cornerRadius = 10;
+    [self.view addSubview:timeBtn];
 }
 
 - (void)btnclick{
