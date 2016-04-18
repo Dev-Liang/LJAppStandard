@@ -9,7 +9,7 @@
 #import "FirstViewController.h"
 #import "TimeButton.h"
 @interface FirstViewController ()
-
+@property (nonatomic, weak) TimeButton *timeBtn;
 @end
 
 @implementation FirstViewController
@@ -41,8 +41,11 @@
     [self.view addSubview:btn2];
     
     TimeButton *timeBtn = [[TimeButton alloc] init];
-    [timeBtn timerWithSecond:20];
+//    [timeBtn timerWithSecond:20];
+//    [timeBtn startWithTime:10 title:@"获取验证码" countDownTitle:@"s" mainColor:[UIColor greenColor] countColor:[UIColor grayColor]];
     timeBtn.backgroundColor = [UIColor greenColor];
+    self.timeBtn = timeBtn;
+    [timeBtn addTarget:self action:@selector(timeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     timeBtn.frame = CGRectMake(100, 250, 100, 40);
     timeBtn.layer.cornerRadius = 10;
     [self.view addSubview:timeBtn];
@@ -59,6 +62,11 @@
 
 - (void)btn2click{
     NSLog(@"哈哈哈哈哈");
+}
+
+- (void)timeBtnClick{
+//    [self.timeBtn startWithTime:10 title:@"获取验证码" countDownTitle:@"s" mainColor:[UIColor greenColor] countColor:[UIColor grayColor]];
+    [self.timeBtn timerWithSecond:10];
 }
 
 - (void)setupTitleData{

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeButton : UIButton
+/** 该方法添加到按钮的点击事件中*/
 - (void)timerWithSecond:(int)seconds;
+
+- (void)startWithTime:(NSInteger)timeLine title:(NSString *)title countDownTitle:(NSString *)subTitle mainColor:(UIColor *)mColor countColor:(UIColor *)color;
 @end

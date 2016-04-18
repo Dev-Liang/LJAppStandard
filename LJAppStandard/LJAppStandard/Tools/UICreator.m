@@ -112,7 +112,7 @@
                              action:(SEL)action
 {
     UIButton *button = [self createButtonWithTitle:title titleColor:nil font:nil target:target action:action];
-    [button setImage:[UIImage imageWithNamed:imageName] forState:UIControlStateNormal];
+    [button setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [button setTitleEdgeInsets:titleEdge];
     [button setImageEdgeInsets:imageEdge];
     return button;
@@ -124,8 +124,8 @@
                                    action:(SEL)action
 {
     UIButton *button = [self createButtonWithTitle:nil titleColor:nil font:nil target:target action:action];
-    [button setImage:[UIImage imageWithNamed:normalImageName] forState:UIControlStateNormal];
-    [button setImage:[UIImage imageWithNamed:highlightedImageName] forState:UIControlStateHighlighted];
+    [button setImage:[[UIImage imageNamed:normalImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [button setImage:[[UIImage imageNamed:highlightedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  forState:UIControlStateHighlighted];
     CGSize size = [button imageForState:UIControlStateNormal].size;
     button.bounds = CGRectMake(0, 0, size.width, size.height);
     return button;
@@ -149,7 +149,7 @@
                                             target:target
                                             action:action];
     
-    [button setImage:[UIImage imageWithNamed:imageName] forState:UIControlStateNormal];
+    [button setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     button.contentHorizontalAlignment = hAlign;
     button.contentVerticalAlignment = vAlign;
     button.contentEdgeInsets = contentEdge;
@@ -186,9 +186,9 @@
 }
 
 //For UIImageView(这种方式不好)
-+ (UIImageView *)createImageViewFromImagename:(NSString *)imagename round:(BOOL)round
++ (UIImageView *)createImageViewFromImagename:(NSString *)imageName round:(BOOL)round
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithNamed:imagename]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     imageView.userInteractionEnabled = YES;
     if (round) {
         imageView.layer.cornerRadius = CGRectGetWidth(imageView.frame);
@@ -267,10 +267,9 @@
                    seporatorLineColor:(UIColor *)seporatorLineColor
                            headerView:(UIView *)headerView
                            footerView:(UIView *)footerView
-                           zeroMargin:(BOOL)zeroMargin
                              delegate:(id<UITableViewDelegate, UITableViewDataSource>)delegate
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:DeviceRect style:style];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:style];
     tableView.separatorColor = seporatorLineColor;
     if (headerView) {
         tableView.tableHeaderView = headerView;
@@ -282,38 +281,21 @@
     }
     tableView.delegate = delegate;
     tableView.dataSource = delegate;
-    if (zeroMargin) {
-        if ([tableView respondsToSelector:@selector(setSeparatorInset:)]){
-            [tableView setSeparatorInset:UIEdgeInsetsZero];
-        }
-        if ([tableView respondsToSelector:@selector(setLayoutMargins:)]){
-            [tableView setLayoutMargins:UIEdgeInsetsZero];
-        }
-    }
     return tableView;
 }
 
-//+ (UIWebView *)createWebViewWithUrl:(NSString *)webUrl
-//                            baseURL:(NSURL *)baseUrl
-//                         htmlString:(NSString *)htmlString
-//                       scroolEnable:(BOOL)sEnable
-//                           delegate:(id<UIWebViewDelegate>)delegate
-//{
-//    UIWebView *webView = [[UIWebView alloc] init];
-//    webView.scrollView.scrollEnabled = sEnable;
-//    webView.scrollView.showsHorizontalScrollIndicator = NO;
-//    webView.scrollView.showsVerticalScrollIndicator = NO;
-//    webView.delegate = delegate;
-//    if (![FSStringTools isEmpty:webUrl]) {
-////        NSURLRequest *request = [FSNetTools getRequestWithURLString:webUrl method:@"GET" timeOut:45];
-////        [webView loadRequest:request];
-//    }
-//    
-//    if (![FSStringTools isEmpty:htmlString]) {
-//        [webView loadHTMLString:htmlString baseURL:baseUrl];
-//    }
-//    
-//    return webView;
-//}
+//For UIWebView
++ (UIWebView *)createWebViewWithUrl:(NSString *)webUrl
+                       scroolEnable:(BOOL)sEnable
+                           delegate:(id<UIWebViewDelegate>)delegate
+{
+    UIWebView *webView = [[UIWebView alloc] init];
+    webView.scrollView.scrollEnabled = sEnable;
+    webView.scrollView.showsHorizontalScrollIndicator = NO;
+    webView.scrollView.showsVerticalScrollIndicator = NO;
+    webView.delegate = delegate;
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:webUrl]]];
+    return webView;
+}
 
 @end
