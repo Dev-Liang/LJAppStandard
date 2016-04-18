@@ -62,6 +62,8 @@
 		180AEF3D1CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF081CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m */; };
 		180AEF3E1CBF3A9200FD4D3D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */; };
 		180AEF411CBF6A9700FD4D3D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF401CBF6A9700FD4D3D /* TestViewController.m */; };
+		183DBF2F1CC4B9E100818B8F /* TimeButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */; };
+		183DBF381CC4CC8400818B8F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF371CC4CC8400818B8F /* CycleScrollView.m */; };
 		1845360D1CBE265C0002F8BA /* FSCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535FE1CBE265C0002F8BA /* FSCacheTools.m */; };
 		1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536001CBE265C0002F8BA /* FSDeviceTools.m */; };
 		184536101CBE265C0002F8BA /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536041CBE265C0002F8BA /* FSPathTools.m */; };
@@ -202,6 +204,10 @@
 		180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		180AEF3F1CBF6A9700FD4D3D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		180AEF401CBF6A9700FD4D3D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		183DBF2D1CC4B9E100818B8F /* TimeButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeButtonController.h; sourceTree = "<group>"; };
+		183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeButtonController.m; sourceTree = "<group>"; };
+		183DBF361CC4CC8300818B8F /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		183DBF371CC4CC8400818B8F /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		184535FD1CBE265C0002F8BA /* FSCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCacheTools.h; sourceTree = "<group>"; };
 		184535FE1CBE265C0002F8BA /* FSCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCacheTools.m; sourceTree = "<group>"; };
 		184535FF1CBE265C0002F8BA /* FSDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDeviceTools.h; sourceTree = "<group>"; };
@@ -549,6 +555,8 @@
 				184536A91CBE3E160002F8BA /* ThridViewController.m */,
 				180AEF3F1CBF6A9700FD4D3D /* TestViewController.h */,
 				180AEF401CBF6A9700FD4D3D /* TestViewController.m */,
+				183DBF2D1CC4B9E100818B8F /* TimeButtonController.h */,
+				183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -558,6 +566,8 @@
 			children = (
 				18A97F6A1CC0CDEC009B3687 /* TimeButton.h */,
 				18A97F6B1CC0CDEC009B3687 /* TimeButton.m */,
+				183DBF361CC4CC8300818B8F /* CycleScrollView.h */,
+				183DBF371CC4CC8400818B8F /* CycleScrollView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -684,6 +694,7 @@
 				184536B61CBE3E160002F8BA /* FourthViewController.m in Sources */,
 				180AEF121CBF3A9200FD4D3D /* AFURLResponseSerialization.m in Sources */,
 				184536B81CBE3E160002F8BA /* MessagesViewController.m in Sources */,
+				183DBF381CC4CC8400818B8F /* CycleScrollView.m in Sources */,
 				180AEF1D1CBF3A9200FD4D3D /* UIWebView+AFNetworking.m in Sources */,
 				180AEE911CBF32BF00FD4D3D /* EmptyDataView.m in Sources */,
 				180AEF271CBF3A9200FD4D3D /* View+MASAdditions.m in Sources */,
@@ -715,6 +726,7 @@
 				180AEF281CBF3A9200FD4D3D /* ViewController+MASAdditions.m in Sources */,
 				184536B91CBE3E160002F8BA /* SecondViewController.m in Sources */,
 				180AEF2B1CBF3A9200FD4D3D /* README.mdown in Sources */,
+				183DBF2F1CC4B9E100818B8F /* TimeButtonController.m in Sources */,
 				184536B51CBE3E160002F8BA /* FirstViewController.m in Sources */,
 				184536B31CBE3E160002F8BA /* LJTabBarController.m in Sources */,
 				180AEF3E1CBF3A9200FD4D3D /* UIView+MJExtension.m in Sources */,

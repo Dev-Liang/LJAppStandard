@@ -7,67 +7,56 @@
 //
 
 #import "FirstViewController.h"
-#import "TimeButton.h"
-@interface FirstViewController ()
-@property (nonatomic, weak) TimeButton *timeBtn;
+#import "TimeButtonController.h"
+@interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) NSArray *titleArr;
 @end
 
 @implementation FirstViewController
 
+- (NSArray *)titleArr{
+    if (_titleArr == nil) {
+        _titleArr = @[@"获取手机验证码"];
+    }
+    return _titleArr;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    UITextField *textF = [[UITextField alloc] init];
-//    textF.backgroundColor = [UIColor blueColor];
-//    textF.frame = CGRectMake(100, 100, 200, 50);
-//    [self.view addSubview:textF];
-    
-    self.view.backgroundColor = [UIColor whiteColor];;
-    
-//    sleep(10);
-
-    
-    UIButton *btn = [UICreator createButtonWithTitle:@"start" titleColor:[UIColor redColor] font:[UIFont systemFontOfSize:15] target:self action:@selector(btnclick)];
-    btn.frame = CGRectMake(100, 100, 100, 20);
-    [self.view addSubview:btn];
-    
-    UIButton *btn1 = [UICreator createButtonWithTitle:@"end" titleColor:[UIColor redColor] font:[UIFont systemFontOfSize:15] target:self action:@selector(btn1click)];
-    btn1.frame = CGRectMake(100, 150, 100, 20);
-    [self.view addSubview:btn1];
-    
-    UIButton *btn2 = [UICreator createButtonWithTitle:@"hello" titleColor:[UIColor redColor] font:[UIFont systemFontOfSize:15] target:self action:@selector(btn2click)];
-    btn2.frame = CGRectMake(100, 180, 100, 20);
-    [self.view addSubview:btn2];
-    
-    TimeButton *timeBtn = [[TimeButton alloc] init];
-//    [timeBtn timerWithSecond:20];
-//    [timeBtn startWithTime:10 title:@"获取验证码" countDownTitle:@"s" mainColor:[UIColor greenColor] countColor:[UIColor grayColor]];
-    timeBtn.backgroundColor = [UIColor greenColor];
-    self.timeBtn = timeBtn;
-    [timeBtn addTarget:self action:@selector(timeBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    timeBtn.frame = CGRectMake(100, 250, 100, 40);
-    timeBtn.layer.cornerRadius = 10;
-    [self.view addSubview:timeBtn];
+    UITableView *tv = [UICreator createTableWithStyle:UITableViewStylePlain seporatorLineColor:nil headerView:nil footerView:nil delegate:self];
+    tv.frame = DeviceRect;
+    [self.view addSubview:tv];
 }
 
-- (void)btnclick{
-//    [self startLoading];
-    [self addEmptyDataViewWithTitle:@"没有收藏的人，拿什么找回忆"];
+
+#pragma mark - **************** UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 
-- (void)btn1click{
-    [self endLoading];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.titleArr.count;
 }
 
-- (void)btn2click{
-    NSLog(@"哈哈哈哈哈");
+static NSString * const CellId = @"CellId";
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellId];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.detailTextLabel.text = self.titleArr[indexPath.row];
+    return cell;
 }
 
-- (void)timeBtnClick{
-//    [self.timeBtn startWithTime:10 title:@"获取验证码" countDownTitle:@"s" mainColor:[UIColor greenColor] countColor:[UIColor grayColor]];
-    [self.timeBtn timerWithSecond:10];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        [self.navigationController pushViewController:[TimeButtonController new] animated:YES];
+    }
 }
+
 
 - (void)setupTitleData{
     self.navTitleText = @"第一个";

@@ -20,6 +20,7 @@
 #pragma mark - **************** UI方面的设定
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self setupTitleData];
     [self setupTitleView];
