@@ -35,7 +35,7 @@
 }
 
 /** 添加通知实时检测网络（如果不需要实时检测可以不添加该代码）*/
-+ (void)addNetWorkChangeNotification {
++ (void)addNetWorkChangeEveryTime {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:AFNetworkingReachabilityDidChangeNotification object:nil];
 }
 

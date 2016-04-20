@@ -28,7 +28,7 @@
 
 - (void)checkNetWork{
     [LJNetWorkingTools checkNetWorkStatus];
-    [LJNetWorkingTools addNetWorkChangeNotification];
+    [LJNetWorkingTools addNetWorkChangeEveryTime];
 }
 
 @end

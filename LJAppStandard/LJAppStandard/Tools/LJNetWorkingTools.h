@@ -12,7 +12,7 @@
 /** 检查网络状态*/
 + (void)checkNetWorkStatus;
 /** 添加通知实时检测网络（如果不需要实时检测可以不添加该代码）*/
-+ (void)addNetWorkChangeNotification;
++ (void)addNetWorkChangeEveryTime;
 /** 停止检测网络状态*/
 + (void)stopCheckNetWorkStatus;
 @end
