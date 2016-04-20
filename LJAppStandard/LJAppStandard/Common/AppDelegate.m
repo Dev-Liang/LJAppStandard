@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LJTabBarController.h"
+#import "LJNetWorkingTools.h"
 @interface AppDelegate ()
 
 @end
@@ -19,9 +20,15 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[LJTabBarController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    [self checkNetWork];
     return YES;
 }
 
 
+- (void)checkNetWork{
+    [LJNetWorkingTools checkNetWorkStatus];
+    [LJNetWorkingTools addNetWorkChangeNotification];
+}
 
 @end

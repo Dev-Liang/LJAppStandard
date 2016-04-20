@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.isSupportScrollingHideNavigationBar = YES;
     UITableView *tv = [UICreator createTableWithStyle:UITableViewStylePlain seporatorLineColor:[UIColor grayColor] headerView:nil footerView:nil delegate:self];
+    tv.frame = DeviceRect;
     [self addRefreshHeaderAndFooter:tv];
     [self.view addSubview:tv];
 }
@@ -44,7 +45,8 @@ static NSString * const CellId = @"CellId";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    [self.navigationController pushViewController:[TestViewController new] animated:YES];
+//    [self.navigationController pushViewController:[TestViewController new] animated:YES];
+    [self endRefreshing];
 }
 
 @end

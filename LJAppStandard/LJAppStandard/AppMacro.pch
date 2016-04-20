@@ -9,7 +9,7 @@
 #ifndef AppMacro_pch
 #define AppMacro_pch
 
-#import "UIView+Frame.h"
+#import "UIView+YYAdd.h"
 #import "NSString+Common.h"
 #import "UIColor+Common.h"
 #import "MBProgressHUD+Show.h"
@@ -21,7 +21,6 @@
 #import "FSDeviceTools.h"
 #import "PositionTools.h"
 #import "UICreator.h"
-#import "UIImage+FSUIImage.h"
 
 #define kc00_ff0000      @"#ff0000"
 #define kc00_333333      @"#333333"

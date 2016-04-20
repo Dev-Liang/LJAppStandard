@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (Common)
+/** 转换16进制的颜色*/
 + (UIColor *)colorWithHexString:(NSString *)color;
 @end

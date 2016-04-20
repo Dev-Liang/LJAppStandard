@@ -10,11 +10,11 @@
 
 @implementation NSString (Common)
 
-- (BOOL)isEmpty{
+- (BOOL)isEmpty {
     return self.length == 0;
 }
 
-- (BOOL)validateEmail{
+- (BOOL)validateEmail {
     return [self validateWithRegExp: @"^[a-zA-Z0-9]{4,}@[a-z0-9A-Z]{2,}\\.[a-zA-Z]{2,}$"];
 }
 
@@ -30,12 +30,12 @@
     return [self validateWithRegExp: length] && [self validateWithRegExp: number] && [self validateWithRegExp: lower] && [self validateWithRegExp: upper];
 }
 
-- (BOOL)validatePhoneNumber{
+- (BOOL)validatePhoneNumber {
     NSString * reg = @"^1\\d{10}$";
     return [self validateWithRegExp: reg];
 }
 
-- (BOOL)validateWithRegExp: (NSString *)regExp{
+- (BOOL)validateWithRegExp: (NSString *)regExp {
     NSPredicate * predicate = [NSPredicate predicateWithFormat: @"SELF MATCHES %@", regExp];
     return [predicate evaluateWithObject: self];
 }

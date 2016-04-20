@@ -47,37 +47,30 @@
 {
     [super layoutSubviews];
     
-    // tabBar的尺寸
     CGFloat width = self.width;
     CGFloat height = self.height;
     
-    // 设置发布按钮的位置
     self.centerBtn.center = CGPointMake(width * 0.5, height * 0.5);
     
-    // 按钮索引
     int index = 0;
     
-    // 按钮的尺寸
     CGFloat tabBarButtonW = width / 5;
     CGFloat tabBarButtonH = height;
     CGFloat tabBarButtonY = 0;
     
-    // 设置4个TabBarButton的frame
     for (UIView *tabBarButton in self.subviews) {
         if (![NSStringFromClass(tabBarButton.class) isEqualToString:@"UITabBarButton"]) continue;
         
-        // 计算按钮的X值
         CGFloat tabBarButtonX = index * tabBarButtonW;
-        if (index >= 2) { // 给后面2个button增加一个宽度的X值
+        if (index >= 2) {
             tabBarButtonX += tabBarButtonW;
         }
         
-        // 设置按钮的frame
         tabBarButton.frame = CGRectMake(tabBarButtonX, tabBarButtonY, tabBarButtonW, tabBarButtonH);
         
-        // 增加索引
         index++;
     }
 }
+
 
 @end
