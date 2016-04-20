@@ -273,4 +273,24 @@ YYSYNTH_DUMMY_CLASS(UIView_YYAdd)
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
 
+- (UIViewController *)currentViewController {
+    for (UIView * next = [self superview]; next; next = next.superview) {
+        UIResponder * nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
+
+- (UINavigationController *)currentNavigationConntroller {
+    for (UIView * next = [self superview]; next; next = next.superview) {
+        UIResponder * nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UINavigationController class]]) {
+            return (UINavigationController *)nextResponder;
+        }
+    }
+    return nil;
+}
+
 @end

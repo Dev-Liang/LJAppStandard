@@ -9,6 +9,8 @@
 #import "FourthViewController.h"
 #import "SecondViewController.h"
 #import "TestViewController.h"
+#import "CustomCell.h"
+#import "TimeButtonController.h"
 @interface FourthViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -21,7 +23,11 @@
     UITableView *tv = [UICreator createTableWithStyle:UITableViewStylePlain seporatorLineColor:[UIColor grayColor] headerView:nil footerView:nil delegate:self];
     tv.frame = DeviceRect;
     [self addRefreshHeaderAndFooter:tv];
+    [tv registerNib:[UINib nibWithNibName:@"CustomCell" bundle:nil] forCellReuseIdentifier:CellId];
+    tv.rowHeight = 80;
     [self.view addSubview:tv];
+    
+    NSLog(@"self ===== %@", self);
 }
 
 #pragma mark - **************** UITableViewDataSource
@@ -35,18 +41,18 @@
 
 static NSString * const CellId = @"CellId";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellId];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellId];
+//    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
 //    [self.navigationController pushViewController:[TestViewController new] animated:YES];
-    [self endRefreshing];
+//    [self endRefreshing];
+    [self.navigationController pushViewController:[TimeButtonController new] animated:YES];
+    
+    NSLog(@"cell");
 }
 
 @end

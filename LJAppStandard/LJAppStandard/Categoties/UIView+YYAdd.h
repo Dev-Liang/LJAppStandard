@@ -115,6 +115,11 @@ NS_ASSUME_NONNULL_BEGIN
 /** 从xib中创建一个控件 */
 + (instancetype)viewFromXib;
 
+/** 获取当前视图的当前控制器*/
+- (UIViewController *)currentViewController;
+
+/** 获取当前视图的当前导航栏控制器*/
+- (UINavigationController *)currentNavigationConntroller;
 @end
 
 NS_ASSUME_NONNULL_END

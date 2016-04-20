@@ -87,6 +87,8 @@
 		1843B2821CC762AE00531FAC /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2701CC762AE00531FAC /* UIImageView+HighlightedWebCache.m */; };
 		1843B2831CC762AE00531FAC /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2721CC762AE00531FAC /* UIImageView+WebCache.m */; };
 		1843B2841CC762AE00531FAC /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2741CC762AE00531FAC /* UIView+WebCacheOperation.m */; };
+		1843B2A11CC774B300531FAC /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B29F1CC774B300531FAC /* CustomCell.m */; };
+		1843B2A21CC774B300531FAC /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1843B2A01CC774B300531FAC /* CustomCell.xib */; };
 		1845360D1CBE265C0002F8BA /* FSCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535FE1CBE265C0002F8BA /* FSCacheTools.m */; };
 		1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536001CBE265C0002F8BA /* FSDeviceTools.m */; };
 		184536101CBE265C0002F8BA /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536041CBE265C0002F8BA /* FSPathTools.m */; };
@@ -275,6 +277,10 @@
 		1843B2721CC762AE00531FAC /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		1843B2731CC762AE00531FAC /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		1843B2741CC762AE00531FAC /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		1843B29D1CC76B6400531FAC /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		1843B29E1CC774B300531FAC /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		1843B29F1CC774B300531FAC /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		1843B2A01CC774B300531FAC /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		184535FD1CBE265C0002F8BA /* FSCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCacheTools.h; sourceTree = "<group>"; };
 		184535FE1CBE265C0002F8BA /* FSCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCacheTools.m; sourceTree = "<group>"; };
 		184535FF1CBE265C0002F8BA /* FSDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDeviceTools.h; sourceTree = "<group>"; };
@@ -595,6 +601,7 @@
 		184535FC1CBE265C0002F8BA /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1843B29D1CC76B6400531FAC /* Singleton.h */,
 				1843B24E1CC750C900531FAC /* LJNetWorkingTools.h */,
 				1843B24F1CC750C900531FAC /* LJNetWorkingTools.m */,
 				1845360B1CBE265C0002F8BA /* UICreator.h */,
@@ -689,6 +696,9 @@
 				18A97F6B1CC0CDEC009B3687 /* TimeButton.m */,
 				183DBF361CC4CC8300818B8F /* CycleScrollView.h */,
 				183DBF371CC4CC8400818B8F /* CycleScrollView.m */,
+				1843B29E1CC774B300531FAC /* CustomCell.h */,
+				1843B29F1CC774B300531FAC /* CustomCell.m */,
+				1843B2A01CC774B300531FAC /* CustomCell.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -798,6 +808,7 @@
 				180AEF3A1CBF3A9200FD4D3D /* MJRefresh.bundle in Resources */,
 				18D363D81CBA138200A784FD /* LaunchScreen.storyboard in Resources */,
 				180AEF141CBF3A9200FD4D3D /* LICENSE in Resources */,
+				1843B2A21CC774B300531FAC /* CustomCell.xib in Resources */,
 				180AEF1E1CBF3A9200FD4D3D /* Info.plist in Resources */,
 				18D363D51CBA138200A784FD /* Assets.xcassets in Resources */,
 			);
@@ -865,6 +876,7 @@
 				180AEF3E1CBF3A9200FD4D3D /* UIView+MJExtension.m in Sources */,
 				180AEF2D1CBF3A9200FD4D3D /* MJRefreshBackFooter.m in Sources */,
 				180AEF151CBF3A9200FD4D3D /* README.md in Sources */,
+				1843B2A11CC774B300531FAC /* CustomCell.m in Sources */,
 				180AEF131CBF3A9200FD4D3D /* AFURLSessionManager.m in Sources */,
 				180AEF2E1CBF3A9200FD4D3D /* MJRefreshComponent.m in Sources */,
 				1843B2811CC762AE00531FAC /* UIImage+MultiFormat.m in Sources */,
