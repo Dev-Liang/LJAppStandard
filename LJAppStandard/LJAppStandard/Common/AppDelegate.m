@@ -44,8 +44,27 @@
                           channel:@"appstore"
                  apsForProduction:NO // 如果为开发状态,设置为 NO; 如果为生产状态,应改为 YES.
             advertisingIdentifier:nil];// 广告 不用设置为nil
-    
+    //注册
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidLoginNotification object:nil];
     return YES;
+}
+
+//通知方法
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    
+    //调用接口
+    NSLog(@"\n\n极光推送注册成功\n\n");
+    
+    
+    [JPUSHService setTags:nil alias:@"111" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+        
+    }];
+    //通知后台registrationID
+//    xxxxx
+    
+    //注销通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kJPFNetworkDidLoginNotification object:nil];
 }
 
 
@@ -57,6 +76,7 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     /// Required - 注册 DeviceToken
     [JPUSHService registerDeviceToken:deviceToken];
+    
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
