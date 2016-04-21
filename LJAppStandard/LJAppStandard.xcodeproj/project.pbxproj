@@ -62,6 +62,16 @@
 		180AEF3D1CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF081CBF3A9200FD4D3D /* UIScrollView+MJRefresh.m */; };
 		180AEF3E1CBF3A9200FD4D3D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */; };
 		180AEF411CBF6A9700FD4D3D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF401CBF6A9700FD4D3D /* TestViewController.m */; };
+		1834B39D1CC8993B00AE2C57 /* jpush-ios-2.1.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B39B1CC8993B00AE2C57 /* jpush-ios-2.1.6.a */; };
+		1834B39F1CC8997400AE2C57 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B39E1CC8997400AE2C57 /* CFNetwork.framework */; };
+		1834B3A11CC8997A00AE2C57 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3A01CC8997A00AE2C57 /* CoreFoundation.framework */; };
+		1834B3A31CC8998200AE2C57 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3A21CC8998200AE2C57 /* CoreTelephony.framework */; };
+		1834B3A51CC8998C00AE2C57 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3A41CC8998C00AE2C57 /* SystemConfiguration.framework */; };
+		1834B3A71CC8999B00AE2C57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3A61CC8999B00AE2C57 /* CoreGraphics.framework */; };
+		1834B3A91CC899A400AE2C57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3A81CC899A400AE2C57 /* Foundation.framework */; };
+		1834B3AB1CC899A900AE2C57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3AA1CC899A900AE2C57 /* UIKit.framework */; };
+		1834B3AD1CC899B000AE2C57 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3AC1CC899B000AE2C57 /* Security.framework */; };
+		1834B3AF1CC899B800AE2C57 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3AE1CC899B800AE2C57 /* libz.tbd */; };
 		183DBF2F1CC4B9E100818B8F /* TimeButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */; };
 		183DBF381CC4CC8400818B8F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF371CC4CC8400818B8F /* CycleScrollView.m */; };
 		1843B2391CC71E9200531FAC /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2381CC71E9200531FAC /* UIImage+Extension.m */; };
@@ -227,6 +237,17 @@
 		180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		180AEF3F1CBF6A9700FD4D3D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		180AEF401CBF6A9700FD4D3D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		1834B39B1CC8993B00AE2C57 /* jpush-ios-2.1.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.6.a"; sourceTree = "<group>"; };
+		1834B39C1CC8993B00AE2C57 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		1834B39E1CC8997400AE2C57 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1834B3A01CC8997A00AE2C57 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		1834B3A21CC8998200AE2C57 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1834B3A41CC8998C00AE2C57 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1834B3A61CC8999B00AE2C57 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1834B3A81CC899A400AE2C57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1834B3AA1CC899A900AE2C57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1834B3AC1CC899B000AE2C57 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1834B3AE1CC899B800AE2C57 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		183DBF2D1CC4B9E100818B8F /* TimeButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeButtonController.h; sourceTree = "<group>"; };
 		183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeButtonController.m; sourceTree = "<group>"; };
 		183DBF361CC4CC8300818B8F /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
@@ -336,6 +357,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1834B3AF1CC899B800AE2C57 /* libz.tbd in Frameworks */,
+				1834B3AD1CC899B000AE2C57 /* Security.framework in Frameworks */,
+				1834B3AB1CC899A900AE2C57 /* UIKit.framework in Frameworks */,
+				1834B3A91CC899A400AE2C57 /* Foundation.framework in Frameworks */,
+				1834B3A71CC8999B00AE2C57 /* CoreGraphics.framework in Frameworks */,
+				1834B3A51CC8998C00AE2C57 /* SystemConfiguration.framework in Frameworks */,
+				1834B3A31CC8998200AE2C57 /* CoreTelephony.framework in Frameworks */,
+				1834B3A11CC8997A00AE2C57 /* CoreFoundation.framework in Frameworks */,
+				1834B39F1CC8997400AE2C57 /* CFNetwork.framework in Frameworks */,
+				1834B39D1CC8993B00AE2C57 /* jpush-ios-2.1.6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +376,8 @@
 		180AEE941CBF3A9200FD4D3D /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1834B39A1CC8993B00AE2C57 /* JPush */,
+				1834B3991CC8992800AE2C57 /* Frameworks */,
 				1843B2541CC762AE00531FAC /* SDWebImage */,
 				180AEE951CBF3A9200FD4D3D /* AFNetworking */,
 				180AEEBE1CBF3A9200FD4D3D /* Masonry */,
@@ -550,6 +583,31 @@
 				180AEF001CBF3A9200FD4D3D /* MJRefreshStateHeader.m */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		1834B3991CC8992800AE2C57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1834B3AE1CC899B800AE2C57 /* libz.tbd */,
+				1834B3AC1CC899B000AE2C57 /* Security.framework */,
+				1834B3AA1CC899A900AE2C57 /* UIKit.framework */,
+				1834B3A81CC899A400AE2C57 /* Foundation.framework */,
+				1834B3A61CC8999B00AE2C57 /* CoreGraphics.framework */,
+				1834B3A41CC8998C00AE2C57 /* SystemConfiguration.framework */,
+				1834B3A21CC8998200AE2C57 /* CoreTelephony.framework */,
+				1834B3A01CC8997A00AE2C57 /* CoreFoundation.framework */,
+				1834B39E1CC8997400AE2C57 /* CFNetwork.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		1834B39A1CC8993B00AE2C57 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				1834B39B1CC8993B00AE2C57 /* jpush-ios-2.1.6.a */,
+				1834B39C1CC8993B00AE2C57 /* JPUSHService.h */,
+			);
+			path = JPush;
 			sourceTree = "<group>";
 		};
 		1843B2541CC762AE00531FAC /* SDWebImage */ = {
@@ -776,6 +834,7 @@
 				TargetAttributes = {
 					18D363C41CBA138200A784FD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = MGFZH32ZY8;
 					};
 				};
 			};
@@ -1019,12 +1078,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = LJAppStandard/AppMacro.pch;
 				INFOPLIST_FILE = LJAppStandard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.j1.LJAppStandard;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LJAppStandard/Vendors/JPush",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.walle.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1032,12 +1098,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = LJAppStandard/AppMacro.pch;
 				INFOPLIST_FILE = LJAppStandard/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.j1.LJAppStandard;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LJAppStandard/Vendors/JPush",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.walle.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
