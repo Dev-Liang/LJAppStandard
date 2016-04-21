@@ -143,6 +143,7 @@
 		18D363CA1CBA138200A784FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D363C91CBA138200A784FD /* main.m */; };
 		18D363D51CBA138200A784FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D363D41CBA138200A784FD /* Assets.xcassets */; };
 		18D363D81CBA138200A784FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D363D61CBA138200A784FD /* LaunchScreen.storyboard */; };
+		7F204D521CC91E5400FCBD27 /* haimian.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F204D511CC91E5400FCBD27 /* haimian.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -405,6 +406,7 @@
 		18D363D41CBA138200A784FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D363D71CBA138200A784FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D363D91CBA138200A784FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F204D511CC91E5400FCBD27 /* haimian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haimian.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -904,6 +906,7 @@
 		1845369B1CBE3E160002F8BA /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				7F204D511CC91E5400FCBD27 /* haimian.png */,
 				1845369E1CBE3E160002F8BA /* FirstViewController.h */,
 				1845369F1CBE3E160002F8BA /* FirstViewController.m */,
 				184536A61CBE3E160002F8BA /* SecondViewController.h */,
@@ -1013,6 +1016,11 @@
 					18D363C41CBA138200A784FD = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = MGFZH32ZY8;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1050,6 +1058,7 @@
 				1834B3DD1CC8B60600AE2C57 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				1843B2A21CC774B300531FAC /* CustomCell.xib in Resources */,
 				1834B3E31CC8B60600AE2C57 /* ShareSDK.bundle in Resources */,
+				7F204D521CC91E5400FCBD27 /* haimian.png in Resources */,
 				180AEF1E1CBF3A9200FD4D3D /* Info.plist in Resources */,
 				18D363D51CBA138200A784FD /* Assets.xcassets in Resources */,
 				1834B3DF1CC8B60600AE2C57 /* WeiboSDK.bundle in Resources */,
@@ -1282,6 +1291,7 @@
 					"$(PROJECT_DIR)/LJAppStandard/Vendors/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/LJAppStandard/Vendors/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walle.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1313,6 +1323,7 @@
 					"$(PROJECT_DIR)/LJAppStandard/Vendors/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/LJAppStandard/Vendors/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walle.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
