@@ -9,12 +9,21 @@
 #import "AppDelegate.h"
 #import "LJTabBarController.h"
 #import "LJNetWorkingTools.h"
+
 #import "JPUSHService.h"
 #import "MobClick.h"
+
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "WXApi.h"
+#import "WeiboSDK.h"
+
 static NSString *appKey = @"3d02c654219bbf8de2849a22";
 static NSString *channel = @"Publish channel";
 static NSString *UMengAppKey = @"571878fee0f55aaed30017f2";
-
+static NSString *ShareSDKKey = @"11f03685d720c";
 @interface AppDelegate ()
 
 @end
@@ -31,6 +40,7 @@ static NSString *UMengAppKey = @"571878fee0f55aaed30017f2";
     
     [self setupJPushWithOptions:launchOptions];
     [self umengTrack];
+    
     return YES;
 }
 
@@ -99,7 +109,7 @@ static NSString *UMengAppKey = @"571878fee0f55aaed30017f2";
     NSLog(@"eorror");
 }
 
-#pragma mark - 友盟统计
+#pragma mark - **************** 友盟统计
 - (void)umengTrack{
     // 捕捉异常
     [MobClick setCrashReportEnabled:YES];
@@ -117,6 +127,53 @@ static NSString *UMengAppKey = @"571878fee0f55aaed30017f2";
     ///设置是否开启background模式,
     [MobClick setBackgroundTaskEnabled:YES];
     
+}
+
+#pragma mark - **************** ShareSDK
+- (void)setupShareSDK{
+    [ShareSDK registerApp:ShareSDKKey activePlatforms:@[
+                                                        @(SSDKPlatformTypeSinaWeibo),
+                                                        @(SSDKPlatformTypeSMS),
+                                                        @(SSDKPlatformTypeWechat),
+                                                        @(SSDKPlatformTypeQQ)]
+                 onImport:^(SSDKPlatformType platformType) {
+                     switch (platformType)
+                     {
+                         case SSDKPlatformTypeWechat:
+                             [ShareSDKConnector connectWeChat:[WXApi class]];
+                             break;
+                         case SSDKPlatformTypeQQ:
+                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+                             break;
+                         case SSDKPlatformTypeSinaWeibo:
+                             [ShareSDKConnector connectWeibo:[WeiboSDK class]];
+                             break;
+                         default:
+                             break;
+                     }
+                 } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+                     switch (platformType)
+                     {
+                         case SSDKPlatformTypeSinaWeibo:
+                             //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                             [appInfo SSDKSetupSinaWeiboByAppKey:@"175030390"
+                                                       appSecret:@"736923729877074d453b01a3a9517c3d"
+                                                     redirectUri:@"http://www.sharesdk.cn"
+                                                        authType:SSDKAuthTypeBoth];
+                             break;
+                         case SSDKPlatformTypeWechat:
+                             [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
+                                                   appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                             break;
+                         case SSDKPlatformTypeQQ:
+                             [appInfo SSDKSetupQQByAppId:@"100371282"
+                                                  appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                                                authType:SSDKAuthTypeBoth];
+                             break;
+                         default:
+                             break;
+                     }
+                 }];
 }
 
 @end
