@@ -72,6 +72,7 @@
 		1834B3AB1CC899A900AE2C57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3AA1CC899A900AE2C57 /* UIKit.framework */; };
 		1834B3AD1CC899B000AE2C57 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3AC1CC899B000AE2C57 /* Security.framework */; };
 		1834B3AF1CC899B800AE2C57 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3AE1CC899B800AE2C57 /* libz.tbd */; };
+		1834B3B31CC8B18B00AE2C57 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3B11CC8B18B00AE2C57 /* libMobClickLibrary.a */; };
 		183DBF2F1CC4B9E100818B8F /* TimeButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */; };
 		183DBF381CC4CC8400818B8F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF371CC4CC8400818B8F /* CycleScrollView.m */; };
 		1843B2391CC71E9200531FAC /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2381CC71E9200531FAC /* UIImage+Extension.m */; };
@@ -248,6 +249,8 @@
 		1834B3AA1CC899A900AE2C57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1834B3AC1CC899B000AE2C57 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1834B3AE1CC899B800AE2C57 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1834B3B11CC8B18B00AE2C57 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		1834B3B21CC8B18B00AE2C57 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		183DBF2D1CC4B9E100818B8F /* TimeButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeButtonController.h; sourceTree = "<group>"; };
 		183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeButtonController.m; sourceTree = "<group>"; };
 		183DBF361CC4CC8300818B8F /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
@@ -366,6 +369,7 @@
 				1834B3A31CC8998200AE2C57 /* CoreTelephony.framework in Frameworks */,
 				1834B3A11CC8997A00AE2C57 /* CoreFoundation.framework in Frameworks */,
 				1834B39F1CC8997400AE2C57 /* CFNetwork.framework in Frameworks */,
+				1834B3B31CC8B18B00AE2C57 /* libMobClickLibrary.a in Frameworks */,
 				1834B39D1CC8993B00AE2C57 /* jpush-ios-2.1.6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +380,7 @@
 		180AEE941CBF3A9200FD4D3D /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1834B3B01CC8B18B00AE2C57 /* UMeng */,
 				1834B39A1CC8993B00AE2C57 /* JPush */,
 				1834B3991CC8992800AE2C57 /* Frameworks */,
 				1843B2541CC762AE00531FAC /* SDWebImage */,
@@ -608,6 +613,15 @@
 				1834B39C1CC8993B00AE2C57 /* JPUSHService.h */,
 			);
 			path = JPush;
+			sourceTree = "<group>";
+		};
+		1834B3B01CC8B18B00AE2C57 /* UMeng */ = {
+			isa = PBXGroup;
+			children = (
+				1834B3B11CC8B18B00AE2C57 /* libMobClickLibrary.a */,
+				1834B3B21CC8B18B00AE2C57 /* MobClick.h */,
+			);
+			path = UMeng;
 			sourceTree = "<group>";
 		};
 		1843B2541CC762AE00531FAC /* SDWebImage */ = {
@@ -1087,6 +1101,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LJAppStandard/Vendors/JPush",
+					"$(PROJECT_DIR)/LJAppStandard/Vendors/UMeng",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.walle.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1107,6 +1122,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LJAppStandard/Vendors/JPush",
+					"$(PROJECT_DIR)/LJAppStandard/Vendors/UMeng",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.walle.LJAppStandard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
