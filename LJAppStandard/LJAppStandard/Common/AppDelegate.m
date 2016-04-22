@@ -40,7 +40,7 @@ static NSString *ShareSDKKey = @"11f03685d720c";
     
     [self setupJPushWithOptions:launchOptions];
     [self umengTrack];
-    
+    [self setupShareSDK];
     return YES;
 }
 
@@ -141,8 +141,8 @@ static NSString *ShareSDKKey = @"11f03685d720c";
                          case SSDKPlatformTypeWechat:
                              [ShareSDKConnector connectWeChat:[WXApi class]];
                              break;
-                         case SSDKPlatformTypeQQ:
-                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
+//                         case SSDKPlatformTypeQQ:
+//                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
                              break;
                          case SSDKPlatformTypeSinaWeibo:
                              [ShareSDKConnector connectWeibo:[WeiboSDK class]];
@@ -161,14 +161,14 @@ static NSString *ShareSDKKey = @"11f03685d720c";
                                                         authType:SSDKAuthTypeBoth];
                              break;
                          case SSDKPlatformTypeWechat:
-                             [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
-                                                   appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                             [appInfo SSDKSetupWeChatByAppId:@"wx226513383806d03d"
+                                                   appSecret:@"34613e97b739adc2a8f677830331b036"];
                              break;
-                         case SSDKPlatformTypeQQ:
-                             [appInfo SSDKSetupQQByAppId:@"100371282"
-                                                  appKey:@"aed9b0303e3ed1e27bae87c33761161d"
-                                                authType:SSDKAuthTypeBoth];
-                             break;
+//                         case SSDKPlatformTypeQQ:
+//                             [appInfo SSDKSetupQQByAppId:@"100371282"
+//                                                  appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+//                                                authType:SSDKAuthTypeBoth];
+//                             break;
                          default:
                              break;
                      }
