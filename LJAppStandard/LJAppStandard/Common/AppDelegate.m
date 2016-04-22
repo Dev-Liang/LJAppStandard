@@ -44,8 +44,13 @@ static NSString *ShareSDKKey = @"11f03685d720c";
     return YES;
 }
 
+#pragma mark - **************** 检测网络状态
+- (void)checkNetWork{
+    [LJNetWorkingTools checkNetWorkStatus];
+    [LJNetWorkingTools addNetWorkChangeEveryTime];
+}
 
-#pragma mark - **************** 极光推送相关代码
+#pragma mark - **************** 极光推送相关
 - (void)setupJPushWithOptions:(NSDictionary *)launchOptions{
     // 注册
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
@@ -66,10 +71,13 @@ static NSString *ShareSDKKey = @"11f03685d720c";
                           channel:channel
                  apsForProduction:NO // 如果为开发状态,设置为 NO; 如果为生产状态,应改为 YES.
             advertisingIdentifier:nil];// 广告 不用设置为nil
-    //注册
-    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidLoginNotification object:nil];
+    
     [JPUSHService resetBadge];
+    //极光推送打印调试信息
+//    [JPUSHService setDebugMode];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    //注册
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidLoginNotification object:nil];
 }
 
 //通知方法
@@ -81,15 +89,11 @@ static NSString *ShareSDKKey = @"11f03685d720c";
     }];
     //通知后台registrationID
 //    xxxxx
+    NSString *registrationID = [JPUSHService registrationID];
+    NSLog(@"registrationID==%@", registrationID);
     
     //注销通知
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kJPFNetworkDidLoginNotification object:nil];
-}
-
-
-- (void)checkNetWork{
-    [LJNetWorkingTools checkNetWorkStatus];
-    [LJNetWorkingTools addNetWorkChangeEveryTime];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -98,15 +102,23 @@ static NSString *ShareSDKKey = @"11f03685d720c";
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    completionHandler(UIBackgroundFetchResultNewData);
     // 收到通知就触发
     [JPUSHService handleRemoteNotification:userInfo];
-    completionHandler(UIBackgroundFetchResultNewData);
-    [JPUSHService resetBadge]; // 重置 脚标
+    // 应用在前台 或者后台开启状态下，不跳转页面，让用户选择。
+    if (application.applicationState == UIApplicationStateActive || application.applicationState == UIApplicationStateBackground) {
+        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }else{
+        //        [self.window.rootViewController.view addSubview:[UISwitch new]];
+    }
+    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     // error 处理
-    NSLog(@"eorror");
+    NSLog(@"DeviceToken 获取失败，原因：%@", error);
 }
 
 #pragma mark - **************** 友盟统计
@@ -134,15 +146,16 @@ static NSString *ShareSDKKey = @"11f03685d720c";
     [ShareSDK registerApp:ShareSDKKey activePlatforms:@[
                                                         @(SSDKPlatformTypeSinaWeibo),
                                                         @(SSDKPlatformTypeSMS),
-                                                        @(SSDKPlatformTypeWechat)]
+                                                        // 不要使用微信总平台进行初始化(会有微信收藏)
+                                                        //@(SSDKPlatformTypeWechat),
+                                                        // 使用微信子平台进行初始化，即可
+                                                        @(SSDKPlatformSubTypeWechatSession),
+                                                        @(SSDKPlatformSubTypeWechatTimeline)]
                  onImport:^(SSDKPlatformType platformType) {
                      switch (platformType)
                      {
                          case SSDKPlatformTypeWechat:
                              [ShareSDKConnector connectWeChat:[WXApi class]];
-                             break;
-//                         case SSDKPlatformTypeQQ:
-//                             [ShareSDKConnector connectQQ:[QQApiInterface class] tencentOAuthClass:[TencentOAuth class]];
                              break;
                          case SSDKPlatformTypeSinaWeibo:
                              [ShareSDKConnector connectWeibo:[WeiboSDK class]];
@@ -164,11 +177,6 @@ static NSString *ShareSDKKey = @"11f03685d720c";
                              [appInfo SSDKSetupWeChatByAppId:@"wx226513383806d03d"
                                                    appSecret:@"34613e97b739adc2a8f677830331b036"];
                              break;
-//                         case SSDKPlatformTypeQQ:
-//                             [appInfo SSDKSetupQQByAppId:@"100371282"
-//                                                  appKey:@"aed9b0303e3ed1e27bae87c33761161d"
-//                                                authType:SSDKAuthTypeBoth];
-//                             break;
                          default:
                              break;
                      }

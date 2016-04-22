@@ -140,6 +140,7 @@
 		184536B81CBE3E160002F8BA /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A51CBE3E160002F8BA /* MessagesViewController.m */; };
 		184536B91CBE3E160002F8BA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A71CBE3E160002F8BA /* SecondViewController.m */; };
 		184536BA1CBE3E160002F8BA /* ThridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536A91CBE3E160002F8BA /* ThridViewController.m */; };
+		18A654891CC9D4FB00D87F3C /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A654881CC9D4FB00D87F3C /* ShareManager.m */; };
 		18A97F6C1CC0CDEC009B3687 /* TimeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A97F6B1CC0CDEC009B3687 /* TimeButton.m */; };
 		18D363CA1CBA138200A784FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D363C91CBA138200A784FD /* main.m */; };
 		18D363D51CBA138200A784FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D363D41CBA138200A784FD /* Assets.xcassets */; };
@@ -402,6 +403,8 @@
 		184536A81CBE3E160002F8BA /* ThridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThridViewController.h; sourceTree = "<group>"; };
 		184536A91CBE3E160002F8BA /* ThridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThridViewController.m; sourceTree = "<group>"; };
 		18575FBA1CBA24A300B9AEB2 /* AppMacro.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.pch; sourceTree = "<group>"; };
+		18A654871CC9D4FB00D87F3C /* ShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
+		18A654881CC9D4FB00D87F3C /* ShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareManager.m; sourceTree = "<group>"; };
 		18A97F6A1CC0CDEC009B3687 /* TimeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeButton.h; sourceTree = "<group>"; };
 		18A97F6B1CC0CDEC009B3687 /* TimeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeButton.m; sourceTree = "<group>"; };
 		18D363C51CBA138200A784FD /* LJAppStandard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJAppStandard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -842,6 +845,8 @@
 			isa = PBXGroup;
 			children = (
 				1843B29D1CC76B6400531FAC /* Singleton.h */,
+				18A654871CC9D4FB00D87F3C /* ShareManager.h */,
+				18A654881CC9D4FB00D87F3C /* ShareManager.m */,
 				1843B24E1CC750C900531FAC /* LJNetWorkingTools.h */,
 				1843B24F1CC750C900531FAC /* LJNetWorkingTools.m */,
 				1845360B1CBE265C0002F8BA /* UICreator.h */,
@@ -1126,6 +1131,7 @@
 				180AEF281CBF3A9200FD4D3D /* ViewController+MASAdditions.m in Sources */,
 				184536B91CBE3E160002F8BA /* SecondViewController.m in Sources */,
 				180AEF2B1CBF3A9200FD4D3D /* README.mdown in Sources */,
+				18A654891CC9D4FB00D87F3C /* ShareManager.m in Sources */,
 				183DBF2F1CC4B9E100818B8F /* TimeButtonController.m in Sources */,
 				184536B51CBE3E160002F8BA /* FirstViewController.m in Sources */,
 				184536B31CBE3E160002F8BA /* LJTabBarController.m in Sources */,

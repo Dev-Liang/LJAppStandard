@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 #import "TimeButtonController.h"
 #import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
+#import "ShareManager.h"
 @interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSArray *titleArr;
 @end
@@ -17,7 +19,8 @@
 
 - (NSArray *)titleArr{
     if (_titleArr == nil) {
-        _titleArr = @[@"获取手机验证码"];
+        _titleArr = @[@"获取手机验证码",
+                      @"ShareSDK"];
     }
     return _titleArr;
 }
@@ -53,11 +56,16 @@ static NSString * const CellId = @"CellId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    if (indexPath.row == 0) {
-//        [self.navigationController pushViewController:[TimeButtonController new] animated:YES];
-//    }
-    [self share];
-    
+    switch (indexPath.row) {
+        case 0:
+            [self.navigationController pushViewController:[TimeButtonController new] animated:YES];
+            break;
+        case 1:
+            [self share];
+            break;
+        default:
+            break;
+    }
 }
 
 
@@ -67,17 +75,18 @@ static NSString * const CellId = @"CellId";
 
 - (void)share {
     //1、创建分享参数
-    NSArray* imageArray = @[[UIImage imageNamed:@"haimian.png"]];
-//    （注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数 images:@[@"http://mob.com/Assets/images/logo.png?v=20150320"]）
-    if (imageArray) {
-        
-        NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        [shareParams SSDKSetupShareParamsByText:@"分享内容"
-                                         images:imageArray
-                                            url:[NSURL URLWithString:@"http://mob.com"]
-                                          title:@"分享标题"
-                                           type:SSDKContentTypeAuto];
-        //2、分享（可以弹出我们的分享菜单和编辑界面）
+//    NSArray *imageArray = @[[UIImage imageNamed:@"haimian.png"]];
+//    if (imageArray) {
+//        NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+//        [shareParams SSDKSetupShareParamsByText:@"分享内容"
+//                                         images:imageArray
+//                                            url:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/jian-yi-jian-kang/id994784918?mt=8"]
+//                                          title:@"分享标题"
+//                                           type:SSDKContentTypeAuto];
+//        
+//        
+//        
+//        //2、分享（可以弹出我们的分享菜单和编辑界面）
 //        [ShareSDK showShareActionSheet:nil
 //                                 items:nil
 //                           shareParams:shareParams
@@ -108,9 +117,33 @@ static NSString * const CellId = @"CellId";
 //                               break;
 //                       }
 //                   }
-//         ];
+//         ];}
+
     
-    }
+    //1111
+//    [ShareManager noUIShareWithText:@"我是内容内容" images:[UIImage imageNamed:@"haimian.png"] url:@"https://itunes.apple.com/cn/app/jian-yi-jian-kang/id994784918?mt=8" title:@"我是标题我是标题" type:SSDKContentTypeAuto platformType:SSDKPlatformTypeSinaWeibo];
+    
+    
+    //2222
+//    [ShareManager customShareWithText:@"我是内容内容" images:[UIImage imageNamed:@"haimian.png"] url:@"https://itunes.apple.com/cn/app/jian-yi-jian-kang/id994784918?mt=8" title:@"我是标题我是标题" type:SSDKContentTypeAuto platformType:SSDKPlatformTypeSinaWeibo];
+    
+    //33333
+    [ShareManager jumpoverEditUIShareWithText:@"我是内容内容" images:[UIImage imageNamed:@"haimian.png"] url:@"https://itunes.apple.com/cn/app/jian-yi-jian-kang/id994784918?mt=8" title:@"我是标题我是标题" type:SSDKContentTypeAuto platformType:SSDKPlatformTypeSinaWeibo];
+    
 }
+//    [ShareSDK share:SSDKPlatformTypeSinaWeibo parameters:shareParams onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+//        if (state == SSDKResponseStateSuccess) {
+//            NSLog(@"成功");
+//        }else if (state == SSDKResponseStateFail){
+//            NSLog(@"失败");
+//        }else if (state == SSDKResponseStateCancel){
+//            NSLog(@"取消");
+//        }else if (state == SSDKResponseStateBegin){
+//            NSLog(@"开始");
+//        }else{
+//            NSLog(@"未知");
+//        }
+//    }];
+//}
 
 @end

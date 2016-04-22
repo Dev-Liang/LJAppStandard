@@ -9,6 +9,8 @@
 #ifndef AppMacro_pch
 #define AppMacro_pch
 
+#import "Singleton.h"
+
 #import "UIView+YYAdd.h"
 #import "NSString+Common.h"
 #import "UIColor+Common.h"
