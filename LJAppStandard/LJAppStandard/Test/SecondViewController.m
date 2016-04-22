@@ -23,19 +23,30 @@
     btn.frame = CGRectMake(100, 100, 100, 40);
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [btn setTitle:@"TestView" forState:UIControlStateNormal];
+    [btn setTitle:@"alert" forState:UIControlStateNormal];
     [self.view addSubview:btn];
     
     self.view.backgroundColor = [UIColor whiteColor];;
 
     
+    
+    
 }
 
 - (void)btnClick{
-    TestViewController *thridVC = [[TestViewController alloc] init];
+//    TestViewController *thridVC = [[TestViewController alloc] init];
+//    
+//    
+//    [self.navigationController pushViewController:thridVC animated:YES];
     
     
-    [self.navigationController pushViewController:thridVC animated:YES];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"hello" message:@"world" preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alert animated:YES completion:^{
+        [UIView animateWithDuration:10.0 animations:^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }];
+
 }
 
 @end

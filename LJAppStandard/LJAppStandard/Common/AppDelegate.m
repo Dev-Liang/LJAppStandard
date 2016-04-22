@@ -134,8 +134,7 @@ static NSString *ShareSDKKey = @"11f03685d720c";
     [ShareSDK registerApp:ShareSDKKey activePlatforms:@[
                                                         @(SSDKPlatformTypeSinaWeibo),
                                                         @(SSDKPlatformTypeSMS),
-                                                        @(SSDKPlatformTypeWechat),
-                                                        @(SSDKPlatformTypeQQ)]
+                                                        @(SSDKPlatformTypeWechat)]
                  onImport:^(SSDKPlatformType platformType) {
                      switch (platformType)
                      {

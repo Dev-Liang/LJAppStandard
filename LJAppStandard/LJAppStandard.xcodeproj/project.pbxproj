@@ -92,6 +92,7 @@
 		1834B3EC1CC8B68600AE2C57 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3EB1CC8B68600AE2C57 /* ImageIO.framework */; };
 		1834B3EE1CC8B69400AE2C57 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3ED1CC8B69400AE2C57 /* libsqlite3.tbd */; };
 		1834B3F01CC8B69E00AE2C57 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1834B3EF1CC8B69E00AE2C57 /* MessageUI.framework */; };
+		1837B0EF1CC9B137004FEC2A /* UIAlertController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1837B0EE1CC9B137004FEC2A /* UIAlertController+Extension.m */; };
 		183DBF2F1CC4B9E100818B8F /* TimeButtonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */; };
 		183DBF381CC4CC8400818B8F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183DBF371CC4CC8400818B8F /* CycleScrollView.m */; };
 		1843B2391CC71E9200531FAC /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2381CC71E9200531FAC /* UIImage+Extension.m */; };
@@ -303,6 +304,8 @@
 		1834B3EB1CC8B68600AE2C57 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1834B3ED1CC8B69400AE2C57 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1834B3EF1CC8B69E00AE2C57 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1837B0ED1CC9B137004FEC2A /* UIAlertController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extension.h"; sourceTree = "<group>"; };
+		1837B0EE1CC9B137004FEC2A /* UIAlertController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extension.m"; sourceTree = "<group>"; };
 		183DBF2D1CC4B9E100818B8F /* TimeButtonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeButtonController.h; sourceTree = "<group>"; };
 		183DBF2E1CC4B9E100818B8F /* TimeButtonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeButtonController.m; sourceTree = "<group>"; };
 		183DBF361CC4CC8300818B8F /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
@@ -851,6 +854,8 @@
 				184536001CBE265C0002F8BA /* FSDeviceTools.m */,
 				184536031CBE265C0002F8BA /* FSPathTools.h */,
 				184536041CBE265C0002F8BA /* FSPathTools.m */,
+				1837B0ED1CC9B137004FEC2A /* UIAlertController+Extension.h */,
+				1837B0EE1CC9B137004FEC2A /* UIAlertController+Extension.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1013,6 +1018,11 @@
 					18D363C41CBA138200A784FD = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = MGFZH32ZY8;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1141,6 +1151,7 @@
 				180AEF321CBF3A9200FD4D3D /* MJRefreshAutoNormalFooter.m in Sources */,
 				180AEF351CBF3A9200FD4D3D /* MJRefreshBackNormalFooter.m in Sources */,
 				180AEF0E1CBF3A9200FD4D3D /* AFNetworkReachabilityManager.m in Sources */,
+				1837B0EF1CC9B137004FEC2A /* UIAlertController+Extension.m in Sources */,
 				184536B21CBE3E160002F8BA /* LJTabBar.m in Sources */,
 				180AEF0D1CBF3A9200FD4D3D /* AFHTTPSessionManager.m in Sources */,
 				180AEF111CBF3A9200FD4D3D /* AFURLRequestSerialization.m in Sources */,
