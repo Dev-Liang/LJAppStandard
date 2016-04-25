@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     UIButton *btn = [UICreator createButtonWithTitle:@"dismiss" titleColor:[UIColor redColor] font:[UIFont systemFontOfSize:14] target:self action:@selector(btnclick)];
     [self.view addSubview:btn];
 }
