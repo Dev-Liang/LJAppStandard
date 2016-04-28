@@ -63,6 +63,8 @@
 		180AEF3E1CBF3A9200FD4D3D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF0A1CBF3A9200FD4D3D /* UIView+MJExtension.m */; };
 		180AEF411CBF6A9700FD4D3D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AEF401CBF6A9700FD4D3D /* TestViewController.m */; };
 		1820E7461CD1BC7200A9CD29 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E7451CD1BC7200A9CD29 /* LoginController.m */; };
+		1820E74B1CD1EBA900A9CD29 /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E74A1CD1EBA900A9CD29 /* UICreator.m */; };
+		1820E74E1CD1EBED00A9CD29 /* LJAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1820E74D1CD1EBED00A9CD29 /* LJAdManager.m */; };
 		18340A1E1CCF5B35009E22AA /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18340A131CCF5B35009E22AA /* FMDatabase.m */; };
 		18340A1F1CCF5B35009E22AA /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18340A151CCF5B35009E22AA /* FMDatabaseAdditions.m */; };
 		18340A201CCF5B35009E22AA /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18340A171CCF5B35009E22AA /* FMDatabasePool.m */; };
@@ -126,12 +128,6 @@
 		1843B2841CC762AE00531FAC /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B2741CC762AE00531FAC /* UIView+WebCacheOperation.m */; };
 		1843B2A11CC774B300531FAC /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843B29F1CC774B300531FAC /* CustomCell.m */; };
 		1843B2A21CC774B300531FAC /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1843B2A01CC774B300531FAC /* CustomCell.xib */; };
-		1845360D1CBE265C0002F8BA /* FSCacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184535FE1CBE265C0002F8BA /* FSCacheTools.m */; };
-		1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536001CBE265C0002F8BA /* FSDeviceTools.m */; };
-		184536101CBE265C0002F8BA /* FSPathTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536041CBE265C0002F8BA /* FSPathTools.m */; };
-		184536121CBE265C0002F8BA /* FSStringTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536081CBE265C0002F8BA /* FSStringTools.m */; };
-		184536131CBE265C0002F8BA /* PositionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845360A1CBE265C0002F8BA /* PositionTools.m */; };
-		184536141CBE265C0002F8BA /* UICreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845360C1CBE265C0002F8BA /* UICreator.m */; };
 		184536AA1CBE3E160002F8BA /* MBProgressHUD+Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536871CBE3E160002F8BA /* MBProgressHUD+Show.m */; };
 		184536AB1CBE3E160002F8BA /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 184536891CBE3E160002F8BA /* NSString+Common.m */; };
 		184536AC1CBE3E160002F8BA /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1845368B1CBE3E160002F8BA /* UIColor+Common.m */; };
@@ -268,6 +264,10 @@
 		180AEF401CBF6A9700FD4D3D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		1820E7441CD1BC7200A9CD29 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		1820E7451CD1BC7200A9CD29 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		1820E7491CD1EBA900A9CD29 /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
+		1820E74A1CD1EBA900A9CD29 /* UICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
+		1820E74C1CD1EBED00A9CD29 /* LJAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJAdManager.h; sourceTree = "<group>"; };
+		1820E74D1CD1EBED00A9CD29 /* LJAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJAdManager.m; sourceTree = "<group>"; };
 		18340A121CCF5B35009E22AA /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		18340A131CCF5B35009E22AA /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		18340A141CCF5B35009E22AA /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -381,18 +381,6 @@
 		1843B29E1CC774B300531FAC /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		1843B29F1CC774B300531FAC /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		1843B2A01CC774B300531FAC /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
-		184535FD1CBE265C0002F8BA /* FSCacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCacheTools.h; sourceTree = "<group>"; };
-		184535FE1CBE265C0002F8BA /* FSCacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCacheTools.m; sourceTree = "<group>"; };
-		184535FF1CBE265C0002F8BA /* FSDeviceTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDeviceTools.h; sourceTree = "<group>"; };
-		184536001CBE265C0002F8BA /* FSDeviceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSDeviceTools.m; sourceTree = "<group>"; };
-		184536031CBE265C0002F8BA /* FSPathTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPathTools.h; sourceTree = "<group>"; };
-		184536041CBE265C0002F8BA /* FSPathTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPathTools.m; sourceTree = "<group>"; };
-		184536071CBE265C0002F8BA /* FSStringTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStringTools.h; sourceTree = "<group>"; };
-		184536081CBE265C0002F8BA /* FSStringTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStringTools.m; sourceTree = "<group>"; };
-		184536091CBE265C0002F8BA /* PositionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionTools.h; sourceTree = "<group>"; };
-		1845360A1CBE265C0002F8BA /* PositionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionTools.m; sourceTree = "<group>"; };
-		1845360B1CBE265C0002F8BA /* UICreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICreator.h; sourceTree = "<group>"; };
-		1845360C1CBE265C0002F8BA /* UICreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICreator.m; sourceTree = "<group>"; };
 		184536861CBE3E160002F8BA /* MBProgressHUD+Show.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Show.h"; sourceTree = "<group>"; };
 		184536871CBE3E160002F8BA /* MBProgressHUD+Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Show.m"; sourceTree = "<group>"; };
 		184536881CBE3E160002F8BA /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
@@ -896,18 +884,10 @@
 				18A654881CC9D4FB00D87F3C /* ShareManager.m */,
 				1843B24E1CC750C900531FAC /* LJNetWorkingTools.h */,
 				1843B24F1CC750C900531FAC /* LJNetWorkingTools.m */,
-				1845360B1CBE265C0002F8BA /* UICreator.h */,
-				1845360C1CBE265C0002F8BA /* UICreator.m */,
-				184536091CBE265C0002F8BA /* PositionTools.h */,
-				1845360A1CBE265C0002F8BA /* PositionTools.m */,
-				184536071CBE265C0002F8BA /* FSStringTools.h */,
-				184536081CBE265C0002F8BA /* FSStringTools.m */,
-				184535FD1CBE265C0002F8BA /* FSCacheTools.h */,
-				184535FE1CBE265C0002F8BA /* FSCacheTools.m */,
-				184535FF1CBE265C0002F8BA /* FSDeviceTools.h */,
-				184536001CBE265C0002F8BA /* FSDeviceTools.m */,
-				184536031CBE265C0002F8BA /* FSPathTools.h */,
-				184536041CBE265C0002F8BA /* FSPathTools.m */,
+				1820E74C1CD1EBED00A9CD29 /* LJAdManager.h */,
+				1820E74D1CD1EBED00A9CD29 /* LJAdManager.m */,
+				1820E7491CD1EBA900A9CD29 /* UICreator.h */,
+				1820E74A1CD1EBA900A9CD29 /* UICreator.m */,
 				1837B0ED1CC9B137004FEC2A /* UIAlertController+Extension.h */,
 				1837B0EE1CC9B137004FEC2A /* UIAlertController+Extension.m */,
 			);
@@ -1132,7 +1112,6 @@
 			files = (
 				180AEF0B1CBF3A9200FD4D3D /* AFHTTPRequestOperation.m in Sources */,
 				184536AB1CBE3E160002F8BA /* NSString+Common.m in Sources */,
-				184536101CBE265C0002F8BA /* FSPathTools.m in Sources */,
 				1843B27D1CC762AE00531FAC /* SDWebImageManager.m in Sources */,
 				184536B61CBE3E160002F8BA /* FourthViewController.m in Sources */,
 				180AEF121CBF3A9200FD4D3D /* AFURLResponseSerialization.m in Sources */,
@@ -1161,6 +1140,7 @@
 				180AEF311CBF3A9200FD4D3D /* MJRefreshAutoGifFooter.m in Sources */,
 				1843B2841CC762AE00531FAC /* UIView+WebCacheOperation.m in Sources */,
 				180AEF191CBF3A9200FD4D3D /* UIButton+AFNetworking.m in Sources */,
+				1820E74E1CD1EBED00A9CD29 /* LJAdManager.m in Sources */,
 				180AEF171CBF3A9200FD4D3D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				180AEF1F1CBF3A9200FD4D3D /* MASCompositeConstraint.m in Sources */,
 				1843B23C1CC71F2B00531FAC /* UIDevice+YYAdd.m in Sources */,
@@ -1174,8 +1154,6 @@
 				180AEF0C1CBF3A9200FD4D3D /* AFHTTPRequestOperationManager.m in Sources */,
 				1843B2801CC762AE00531FAC /* UIImage+GIF.m in Sources */,
 				18A97F6C1CC0CDEC009B3687 /* TimeButton.m in Sources */,
-				1845360E1CBE265C0002F8BA /* FSDeviceTools.m in Sources */,
-				184536141CBE265C0002F8BA /* UICreator.m in Sources */,
 				180AEF1B1CBF3A9200FD4D3D /* UIProgressView+AFNetworking.m in Sources */,
 				180AEF371CBF3A9200FD4D3D /* MJRefreshGifHeader.m in Sources */,
 				180AEF281CBF3A9200FD4D3D /* ViewController+MASAdditions.m in Sources */,
@@ -1193,6 +1171,7 @@
 				180AEF131CBF3A9200FD4D3D /* AFURLSessionManager.m in Sources */,
 				180AEF2E1CBF3A9200FD4D3D /* MJRefreshComponent.m in Sources */,
 				1843B2811CC762AE00531FAC /* UIImage+MultiFormat.m in Sources */,
+				1820E74B1CD1EBA900A9CD29 /* UICreator.m in Sources */,
 				180AEF391CBF3A9200FD4D3D /* MJRefreshStateHeader.m in Sources */,
 				1843B23F1CC7210100531FAC /* UITableView+YYAdd.m in Sources */,
 				180AEF231CBF3A9200FD4D3D /* MASViewAttribute.m in Sources */,
@@ -1209,7 +1188,6 @@
 				1843B2831CC762AE00531FAC /* UIImageView+WebCache.m in Sources */,
 				180AEF2F1CBF3A9200FD4D3D /* MJRefreshFooter.m in Sources */,
 				1843B2791CC762AE00531FAC /* SDWebImageCompat.m in Sources */,
-				184536131CBE265C0002F8BA /* PositionTools.m in Sources */,
 				180AEF211CBF3A9200FD4D3D /* MASConstraintMaker.m in Sources */,
 				1843B27C1CC762AE00531FAC /* SDWebImageDownloaderOperation.m in Sources */,
 				180AEF321CBF3A9200FD4D3D /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -1222,8 +1200,6 @@
 				184536B01CBE3E160002F8BA /* BaseUIViewController.m in Sources */,
 				1843B2391CC71E9200531FAC /* UIImage+Extension.m in Sources */,
 				180AEF361CBF3A9200FD4D3D /* MJRefreshBackStateFooter.m in Sources */,
-				1845360D1CBE265C0002F8BA /* FSCacheTools.m in Sources */,
-				184536121CBE265C0002F8BA /* FSStringTools.m in Sources */,
 				184536AF1CBE3E160002F8BA /* AppDelegate.m in Sources */,
 				18D363CA1CBA138200A784FD /* main.m in Sources */,
 				1843B27E1CC762AE00531FAC /* SDWebImagePrefetcher.m in Sources */,

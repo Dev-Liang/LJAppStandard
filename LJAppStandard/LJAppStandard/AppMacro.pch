@@ -10,6 +10,7 @@
 #define AppMacro_pch
 
 #import "Singleton.h"
+#import "LJNetWorkingTools.h"
 
 #import "UIView+YYAdd.h"
 #import "NSString+Common.h"
@@ -17,11 +18,11 @@
 #import "MBProgressHUD+Show.h"
 
 //Usefull Tools
-#import "FSPathTools.h"
-#import "FSCacheTools.h"
-#import "FSStringTools.h"
-#import "FSDeviceTools.h"
-#import "PositionTools.h"
+//#import "FSPathTools.h"
+//#import "FSCacheTools.h"
+//#import "FSStringTools.h"
+//#import "FSDeviceTools.h"
+//#import "PositionTools.h"
 #import "UICreator.h"
 
 #define kc00_ff0000      @"#ff0000"
@@ -57,6 +58,17 @@
 #else
 #    define NSLog(...) 
 #endif
+
+
+/** 快速查询一段代码的执行时间 */
+/** 用法
+ TICK
+ do your work here
+ TOCK
+ */
+
+#define TICK NSDate *startTime = [NSDate date];
+#define TOCK NSLog(@"Time:%f", -[startTime timeIntervalSinceNow]);
 
 
 #define LoginStatusChangeNoti   @"LoginStatusChangeNoti"

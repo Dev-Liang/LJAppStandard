@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LJTabBarController.h"
 #import "LJNetWorkingTools.h"
+#import "LJAdManager.h"
 
 #import "JPUSHService.h"
 #import "MobClick.h"
@@ -32,16 +33,44 @@ static NSString *ShareSDKKey = @"11f03685d720c";
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[LJTabBarController alloc] init];
     [self.window makeKeyAndVisible];
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self checkNetWork];
     
     [self setupJPushWithOptions:launchOptions];
     [self umengTrack];
     [self setupShareSDK];
+    
+    [self setupAdvertisement];
     return YES;
+}
+
+#pragma mark - **************** 加载广告页面
+- (void)setupAdvertisement {
+    [LJAdManager loadLastestAdvertisementImage];
+    if ([LJAdManager isShouldDisplayAdvertisement]) {
+        UIImageView *adIV = [[UIImageView alloc] initWithImage:[LJAdManager getAdvertisementImage]];
+        adIV.frame = DeviceRect;
+        adIV.backgroundColor = [UIColor redColor];
+        [self.window addSubview:adIV];
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
+        adIV.alpha = 0.99;
+        [UIView animateWithDuration:5.0 animations:^{
+            adIV.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            [UIView animateWithDuration:0.5 animations:^{
+                adIV.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                [adIV removeFromSuperview];
+            }];
+        }];
+    }else{
+        return;
+    }
 }
 
 #pragma mark - **************** 检测网络状态

@@ -7,8 +7,8 @@
 //
 
 #import "LJNetWorkingTools.h"
-#import "AFNetworkReachabilityManager.h"
-
+//#import "AFNetworkReachabilityManager.h"
+#import "AFNetworking.h"
 @implementation LJNetWorkingTools
 /** 检查网络状态*/
 + (void)checkNetWorkStatus {
@@ -65,6 +65,19 @@
 /** 停止检测网络状态*/
 + (void)stopCheckNetWorkStatus {
     [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+}
+
+/** 不根据基础的URL路径生成单例对象*/
++ (instancetype)sharedNetworkToolsWithoutBaseUrl {
+    static LJNetWorkingTools *instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSURL *url = [NSURL URLWithString:@""];
+        NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+        instance = [[self alloc] initWithBaseURL:url sessionConfiguration:conf];
+        instance.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+    });
+    return instance;
 }
 
 @end
