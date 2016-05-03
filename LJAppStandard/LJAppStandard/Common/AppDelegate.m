@@ -25,7 +25,10 @@ static NSString *appKey = @"3d02c654219bbf8de2849a22";
 static NSString *channel = @"Publish channel";
 static NSString *UMengAppKey = @"571878fee0f55aaed30017f2";
 static NSString *ShareSDKKey = @"11f03685d720c";
-@interface AppDelegate ()
+@interface AppDelegate () {
+    UIImageView *_adImageView;
+    UIButton *_adButton;
+}
 
 @end
 
@@ -48,14 +51,27 @@ static NSString *ShareSDKKey = @"11f03685d720c";
     return YES;
 }
 
-#pragma mark - **************** 加载广告页面
+#pragma mark - **************** 加载广告页面（TODO:这里写的不好，点击应该跳转webview）
 - (void)setupAdvertisement {
     [LJAdManager loadLastestAdvertisementImage];
     if ([LJAdManager isShouldDisplayAdvertisement]) {
         UIImageView *adIV = [[UIImageView alloc] initWithImage:[LJAdManager getAdvertisementImage]];
+        adIV.userInteractionEnabled = YES;
+        _adImageView = adIV;
         adIV.frame = DeviceRect;
         adIV.backgroundColor = [UIColor redColor];
         [self.window addSubview:adIV];
+        
+        UIButton *adBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _adButton = adBtn;
+        adBtn.frame = CGRectMake(DeviceWidth - 40, 10, 30, 30);
+        adBtn.backgroundColor = [UIColor lightGrayColor];
+        adBtn.layer.cornerRadius = 15;
+        [adBtn.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [adBtn setTitle:@"跳过" forState:UIControlStateNormal];
+        [adBtn addTarget:self action:@selector(adBtnclick) forControlEvents:UIControlEventTouchUpInside];
+        [self.window addSubview:adBtn];
+        
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
         adIV.alpha = 0.99;
         [UIView animateWithDuration:5.0 animations:^{
@@ -66,11 +82,18 @@ static NSString *ShareSDKKey = @"11f03685d720c";
                 adIV.alpha = 0.0f;
             } completion:^(BOOL finished) {
                 [adIV removeFromSuperview];
+                [adBtn removeFromSuperview];
             }];
         }];
     }else{
         return;
     }
+}
+
+/** 点击跳过，移除广告*/
+- (void)adBtnclick {
+    [_adImageView removeFromSuperview];
+    [_adButton removeFromSuperview];
 }
 
 #pragma mark - **************** 检测网络状态

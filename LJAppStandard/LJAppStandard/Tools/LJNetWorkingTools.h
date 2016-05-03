@@ -42,5 +42,6 @@ typedef NS_ENUM(NSUInteger, NetWorkingRequestType) {
  *  @return 
  */
 + (NSURLSessionTask *)POST:(NSString *)URLString params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-
+/** 取消网络请求*/
++ (void)cancelAllRequest;
 @end

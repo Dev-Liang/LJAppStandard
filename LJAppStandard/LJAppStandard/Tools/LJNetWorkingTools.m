@@ -139,4 +139,9 @@
     return task;
 }
 
+/** 取消网络请求*/
++ (void)cancelAllRequest {
+    [[[self manager] operationQueue] cancelAllOperations];
+}
+
 @end
