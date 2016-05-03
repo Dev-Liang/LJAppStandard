@@ -53,10 +53,11 @@
 
 #define kVersion     [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
+// 项目打包上线都不会打印日志，因此可放心。
 #ifdef DEBUG
-#    define NSLog(...) NSLog(__VA_ARGS__)
+#define NSLog(s, ... ) NSLog( @"[%@：in line: %d]-->%@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 #else
-#    define NSLog(...) 
+#define NSLog(s, ... )
 #endif
 
 

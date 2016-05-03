@@ -47,12 +47,13 @@
 + (void)loadLastestAdvertisementImage {
     NSInteger nowTime = [[[NSDate alloc] init] timeIntervalSince1970];
     NSString *path = [NSString stringWithFormat:@"http://g1.163.com/madr?app=7A16FBB6&platform=ios&category=startup&location=1&timestamp=%ld", nowTime];
-    [[LJNetWorkingTools sharedNetworkToolsWithoutBaseUrl] GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [LJNetWorkingTools GET:path params:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSMutableArray *arr = responseObject[@"ads"];
+        NSInteger adsCounts = arr.count;
         NSString *imageUrlOne = arr[0][@"res_url"][0];
         NSString *imageUrlTwo = nil;
         if (arr.count > 1) {
-            imageUrlTwo = arr[arc4random() % 11][@"res_url"][0];
+            imageUrlTwo = arr[arc4random() % (adsCounts - 1)][@"res_url"][0];
         }
         BOOL isOne = [[NSUserDefaults standardUserDefaults] boolForKey:@"isOne"];
         if (imageUrlTwo.length > 0) {

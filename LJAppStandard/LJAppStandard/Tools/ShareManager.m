@@ -114,13 +114,11 @@
                                       title:title
                                        type:type];
 //    (分享菜单)平台顺序自定义(如果SDK中没有添加的功能，将无法调用)
-    NSArray *items = @[@(SSDKPlatformTypeMail),
+    NSArray *items = @[@(SSDKPlatformTypeSinaWeibo),
                        @(SSDKPlatformTypeSMS),
                        @(SSDKPlatformTypeCopy),
-                       @(SSDKPlatformTypeFacebook),
-                       @(SSDKPlatformTypeTwitter),
-                       @(SSDKPlatformTypeWechat),
-                       @(SSDKPlatformTypeQQ)];
+                       @(SSDKPlatformSubTypeWechatSession),
+                       @(SSDKPlatformSubTypeWechatTimeline)];
     
     //调用分享的方法
     SSUIShareActionSheetController *sheet = [ShareSDK showShareActionSheet:nil items:items shareParams:shareParams onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {

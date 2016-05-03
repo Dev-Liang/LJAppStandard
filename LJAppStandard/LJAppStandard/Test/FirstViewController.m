@@ -131,19 +131,6 @@ static NSString * const CellId = @"CellId";
     [ShareManager jumpoverEditUIShareWithText:@"我是内容内容" images:[UIImage imageNamed:@"haimian.png"] url:@"https://itunes.apple.com/cn/app/jian-yi-jian-kang/id994784918?mt=8" title:@"我是标题我是标题" type:SSDKContentTypeAuto platformType:SSDKPlatformTypeSinaWeibo];
     
 }
-//    [ShareSDK share:SSDKPlatformTypeSinaWeibo parameters:shareParams onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-//        if (state == SSDKResponseStateSuccess) {
-//            NSLog(@"成功");
-//        }else if (state == SSDKResponseStateFail){
-//            NSLog(@"失败");
-//        }else if (state == SSDKResponseStateCancel){
-//            NSLog(@"取消");
-//        }else if (state == SSDKResponseStateBegin){
-//            NSLog(@"开始");
-//        }else{
-//            NSLog(@"未知");
-//        }
-//    }];
-//}
+
 
 @end

@@ -7,14 +7,40 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPSessionManager.h"
-@interface LJNetWorkingTools : AFHTTPSessionManager
+@class AFHTTPSessionManager;
+typedef NS_ENUM(NSUInteger, NetWorkingRequestType) {
+    NetWorkingRequestTypeGET = 0,
+    NetWorkingRequestTypePOST,
+};
+
+@interface LJNetWorkingTools : NSObject
 /** 检查网络状态*/
 + (void)checkNetWorkStatus;
 /** 添加通知实时检测网络（如果不需要实时检测可以不添加该代码）*/
 + (void)addNetWorkChangeEveryTime;
 /** 停止检测网络状态*/
 + (void)stopCheckNetWorkStatus;
-/** 不根据基础的URL路径生成单例对象*/
-+ (instancetype)sharedNetworkToolsWithoutBaseUrl;
+/**
+ *  GET请求
+ *
+ *  @param URLString URL路径
+ *  @param params    请求参数
+ *  @param success   成功的回调
+ *  @param failure   失败的回调
+ *
+ *  @return
+ */
++ (NSURLSessionTask *)GET:(NSString *)URLString params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+/**
+ *  POST请求
+ *
+ *  @param URLString URL路径
+ *  @param params    请求参数
+ *  @param success   成功的回调
+ *  @param failure   失败的回调
+ *
+ *  @return 
+ */
++ (NSURLSessionTask *)POST:(NSString *)URLString params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *task, id responseObject))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
 @end
