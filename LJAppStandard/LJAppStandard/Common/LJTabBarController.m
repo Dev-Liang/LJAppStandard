@@ -58,10 +58,10 @@
  *  添加所有子控制器
  */
 - (void)setupChildVCs{
-    [self setupChildVc:[[FirstViewController alloc] init] title:@"第一个" image:nil selectedImage:nil];
-    [self setupChildVc:[[SecondViewController alloc] init] title:@"第二个" image:nil selectedImage:nil];
-    [self setupChildVc:[[MessagesViewController alloc] init] title:@"消息" image:nil selectedImage:nil];
-    [self setupChildVc:[[FourthViewController alloc] init] title:@"第四个" image:nil selectedImage:nil];
+    [self setupChildVc:[[FirstViewController alloc] init] title:@"第一个" image:@"11" selectedImage:@"12"];
+    [self setupChildVc:[[SecondViewController alloc] init] title:@"第二个" image:@"21" selectedImage:@"22"];
+    [self setupChildVc:[[MessagesViewController alloc] init] title:@"消息" image:@"31" selectedImage:@"32"];
+    [self setupChildVc:[[FourthViewController alloc] init] title:@"第四个" image:@"41" selectedImage:@"42"];
 }
 
 /**
@@ -76,8 +76,8 @@
     [self addChildViewController:nav];
     
     nav.tabBarItem.title = title;
-//    nav.tabBarItem.image = [UIImage imageNamed:image];
-//    nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
+    nav.tabBarItem.image = [UIImage imageNamed:image];
+    nav.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
 }
 
 @end

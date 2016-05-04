@@ -25,8 +25,8 @@
         // 添加中心按钮
         UIButton *centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         centerBtn.backgroundColor = [UIColor redColor];
-//        [centerBtn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
-//        [centerBtn setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
+        [centerBtn setBackgroundImage:[UIImage imageNamed:@"51"] forState:UIControlStateNormal];
+        [centerBtn setBackgroundImage:[UIImage imageNamed:@"52"] forState:UIControlStateHighlighted];
         [centerBtn sizeToFit];
         [centerBtn addTarget:self action:@selector(centerBtnClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:centerBtn];

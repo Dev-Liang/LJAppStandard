@@ -19,8 +19,9 @@
     
     
     TimeButton *btn = [[TimeButton alloc] init];
-    btn.frame = CGRectMake(self.view.center.x, self.view.center.y, 150, 50);
-    [btn setBackgroundColor:[UIColor grayColor]];
+    btn.frame = CGRectMake((DeviceWidth - 150) / 2, (DeviceHeight - 60) / 2, 150, 30);
+    btn.layer.cornerRadius = 10;
+    [btn setBackgroundColor:[UIColor greenColor]];
     [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }

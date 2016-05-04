@@ -57,7 +57,10 @@
  */
 - (void)addGlobalSlideGesture{
     id target = self.interactivePopGestureRecognizer.delegate;
+    NSLog(@"target==%@", target);
+    NSLog(@"self.navigationBar = %@", self);
     
+//    _UINavigationInteractiveTransition
     // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法(由于是私有方法，忽略警告)
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
     
