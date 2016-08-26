@@ -8,6 +8,7 @@
 
 #import "BaseUIViewController.h"
 #import "EmptyDataView.h"
+#import "CurrentVCManager.h"
 @interface BaseUIViewController ()<UIScrollViewDelegate>{
     UIScrollView *_dataScrollView;//数据源Scrollview
     UIActivityIndicatorView *_activy;//转场菊花图标
@@ -20,8 +21,8 @@
 #pragma mark - **************** UI方面的设定
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
     
+    [self setupCurrentViewControllerManager];
     [self setupTitleData];
     [self setupTitleView];
     [self setupTitleTextAndBarButtonItem];
@@ -318,4 +319,10 @@
     }
 }
 
+#pragma mark - **************** 其他设定
+- (void)setupCurrentViewControllerManager {
+    CurrentVCManager *manager = [CurrentVCManager sharedCurrentVCManager];
+    manager.currentViewController = self;
+    self.view.backgroundColor = [UIColor whiteColor];
+}
 @end
